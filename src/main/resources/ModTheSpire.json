@@ -1,0 +1,17 @@
+{
+  "modid": "SoulEssences",
+  "name": "Soul Essences",
+  "author_list": [
+    "Zeckoo"
+  ],
+  "description": "This mod adds soul essences as relics which can be dropped from elites (bosses in future updates).",
+  "version": "1.0",
+  "sts_version": "12-20-2022",
+  "mts_version": "3.8.0",
+  "dependencies": [
+    "basemod",
+    "stslib"
+  ],
+  "update_json": ""
+}
+

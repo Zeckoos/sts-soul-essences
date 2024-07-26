@@ -1,0 +1,34 @@
+[
+  {
+    "PROPER_NAME": "Exhausted",
+    "NAMES": [
+      "exhausted"
+    ],
+    "DESCRIPTION": "Gain #b15% of your max HP as #yBlock, set your base [E] to #b1. NL Effects that add [E] will still applies."
+  },
+
+  {
+    "PROPER_NAME": "Angry",
+    "NAMES": [
+      "angry"
+    ],
+    "DESCRIPTION": "Increases #yStrength by #b1 when taking attack damage."
+  },
+
+  {
+    "PROPER_NAME": "Charging",
+    "NAMES": [
+      "charging"
+    ],
+    "DESCRIPTION": "Deal #b30 damage after #b2 turns."
+  },
+
+  {
+    "PROPER_NAME": "Enraged",
+    "NAMES": [
+      "enraged"
+    ],
+    "DESCRIPTION": "Give #b3 #yStrength if any of the enemies does not intent to attack."
+  }
+
+]

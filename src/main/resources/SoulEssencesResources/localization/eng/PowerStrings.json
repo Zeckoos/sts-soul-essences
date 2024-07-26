@@ -1,0 +1,24 @@
+{
+  "soulessences:ExhaustedPower": {
+    "NAME": "Exhausted",
+    "DESCRIPTIONS": [
+      "Gain #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies."
+    ]
+  },
+
+  "soulessences:AngryPower": {
+    "NAME": "Angry",
+    "DESCRIPTIONS": ["Increases #yStrength by #b", " when taking attack damage."]
+  },
+
+  "soulessences:ChargingPower": {
+    "NAME": "Charging",
+    "DESCRIPTIONS": ["Deal #b30 damage after #b2 turns."]
+  },
+
+  "soulessences:EnragedPower": {
+    "NAME": "Enraged",
+    "DESCRIPTIONS": ["Give #b3 #yStrength if any of the enemies does not intent to attack."]
+  }
+
+}

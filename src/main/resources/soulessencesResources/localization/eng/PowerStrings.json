@@ -13,7 +13,7 @@
 
   "soulessences:ChargingPower": {
     "NAME": "Charging",
-    "DESCRIPTIONS": ["Deal #b30 damage after #b2 turns."]
+    "DESCRIPTIONS": ["Deal #b30 damage at the end of your turn after #b3 turns."]
   },
 
   "soulessences:EnragedPower": {

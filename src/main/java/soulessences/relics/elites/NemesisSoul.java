@@ -1,10 +1,11 @@
-package soulessences.relics;
+package soulessences.relics.elites;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.makeID;
 
@@ -50,6 +51,9 @@ public class NemesisSoul extends BaseRelic {
             AbstractPlayer p = AbstractDungeon.player;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, INTANGIBLE_AMOUNT)));
         }
+        else {
+            this.grayscale = true; // Mark the relic gray
+        }
     }
 
     // Reset relic's counter
@@ -57,6 +61,8 @@ public class NemesisSoul extends BaseRelic {
     public void onVictory() {
         this.counter = 0;
         INTANGIBLE_APPLIED = 0;
+
+        this.grayscale = false; // Revert the mark
     }
 
     @Override

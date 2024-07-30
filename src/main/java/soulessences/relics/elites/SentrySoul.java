@@ -1,8 +1,9 @@
-package soulessences.relics;
+package soulessences.relics.elites;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.logger;
 import static soulessences.SoulEssences.makeID;

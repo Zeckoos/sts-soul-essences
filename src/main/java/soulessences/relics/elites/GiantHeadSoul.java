@@ -1,9 +1,10 @@
-package soulessences.relics;
+package soulessences.relics.elites;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.SlowPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import soulessences.actions.ApplyEffectToAllEnemiesAction;
+import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.makeID;
 
@@ -27,6 +28,13 @@ public class GiantHeadSoul extends BaseRelic {
         this.flash();
 
         AbstractDungeon.actionManager.addToBottom(new ApplyEffectToAllEnemiesAction(SlowPower.class, SLOW_AMOUNT, true));
+
+        this.grayscale = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.grayscale = false;
     }
 
     @Override

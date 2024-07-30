@@ -1,4 +1,4 @@
-package soulessences.relics;
+package soulessences.relics.elites;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import soulessences.actions.ApplyEffectToAllEnemiesAction;
 import soulessences.powers.AngryPower;
 import soulessences.powers.ChargingPower;
+import soulessences.relics.BaseRelic;
 
 import java.util.ArrayList;
 import java.util.Collections;

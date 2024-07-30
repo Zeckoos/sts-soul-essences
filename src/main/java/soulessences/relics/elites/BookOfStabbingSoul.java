@@ -1,4 +1,4 @@
-package soulessences.relics;
+package soulessences.relics.elites;
 
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import soulessences.actions.CopyAttackAction;
 import com.megacrit.cardcrawl.random.Random;
+import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.makeID;
 

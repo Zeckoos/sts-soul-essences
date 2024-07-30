@@ -1,10 +1,11 @@
-package soulessences.relics;
+package soulessences.relics.elites;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.PoisonedStab;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.makeID;
 
@@ -31,6 +32,12 @@ public class ReptomancerSoul extends BaseRelic {
         for (int i = 0; i < CARDS_AMOUNT; i++) {
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(card, 1, true, true));
         }
+        this.grayscale = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.grayscale = false;
     }
 
     @Override

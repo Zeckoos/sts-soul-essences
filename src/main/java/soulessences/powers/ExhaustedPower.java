@@ -64,9 +64,14 @@ public class ExhaustedPower extends AbstractPower {
         AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "My body is exhausted...", true));
 
         maxEnergy = AbstractDungeon.player.energy.energy; // Set player's max energy
-
         setEnergyToMin();
-        atStartOfTurn();
+        gainBlock();
+    }
+
+    private void gainBlock() {
+        int blockAmount = Math.round(this.owner.maxHealth * 0.15f);
+
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, blockAmount));
     }
 
     private void setEnergyToMin() {
@@ -79,13 +84,8 @@ public class ExhaustedPower extends AbstractPower {
             this.flash();
 
             setEnergyToMin();
-
-            int blockAmount = Math.round(this.owner.maxHealth * 0.15f);
-
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, blockAmount));
+            gainBlock();
         }
-
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
     }
 
     private void applyBuffs() {
@@ -104,6 +104,10 @@ public class ExhaustedPower extends AbstractPower {
 
                 applyBuffs();
             }
+            else {
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
+            }
+
         }
     }
 

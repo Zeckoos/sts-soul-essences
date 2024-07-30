@@ -29,7 +29,7 @@ public class AngryPower extends AbstractPower {
 
     private static final Texture normalImage = TextureLoader.getTexture(PathManager.makePowerPath32("Angry.png"));
 
-    private static final int STR_INCREASE = 1;
+    private static final int STR_INCREASE = 2;
 
     public AngryPower(AbstractCreature owner, int amount) {
         this.name = NAME;

@@ -32,7 +32,7 @@
   "soulessences:TaskMasterSoul": {
     "NAME": "Taskmaster Soul",
     "FLAVOR": "You feel a bit [REDACTED] towards certain enemies.",
-    "DESCRIPTIONS": ["At the start of every #b3 turn, apply #b3 #yWeak and #yVulnerable to ALL enemies."]
+    "DESCRIPTIONS": ["At the start of every #b3 turns, apply #b3 #yWeak and #yVulnerable to ALL enemies."]
   },
 
   "soulessences:GiantHeadSoul": {
@@ -51,5 +51,11 @@
     "NAME": "Reptomancer Soul",
     "FLAVOR": "You gained the ability to summon poison daggers.",
     "DESCRIPTIONS": ["At the start of each combat, #yShuffle #b6 Poisoned Stab with #b0 cost to the top of your deck."]
+  },
+
+  "soulessences:SlimeBossSoul": {
+    "NAME": "Slime Boss Soul",
+    "FLAVOR": "You gained the ability to excrete a slime minion when in danger.",
+    "DESCRIPTIONS": ["At the start of combat gain #ysoulessences:Mitosis."]
   }
 }

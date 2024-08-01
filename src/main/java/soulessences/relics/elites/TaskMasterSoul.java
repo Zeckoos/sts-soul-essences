@@ -16,15 +16,14 @@ public class TaskMasterSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
+    private static final String ENEMY_ID = "SlaverBoss";
+
     private static final int WEAK_AMOUNT = 3;
 
     private static final int STR_AMOUNT = 3;
 
     public TaskMasterSoul() {
-        super(ID, RARITY, SOUND);
-
-        ENEMY_KEYS.add("Slavers");
-        ENEMY_KEYS.add("Colosseum Slavers");
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     @Override

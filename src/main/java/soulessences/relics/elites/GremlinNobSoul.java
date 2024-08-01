@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import soulessences.powers.EnragedPower;
 import soulessences.relics.BaseRelic;
 
-import static soulessences.SoulEssences.logger;
 import static soulessences.SoulEssences.makeID;
 
 public class GremlinNobSoul extends BaseRelic {
@@ -20,13 +19,10 @@ public class GremlinNobSoul extends BaseRelic {
 
     private static final int ENRAGE_AMOUNT = 1;
 
+    private static final String ENEMY_ID = "GremlinNob";
+
     public GremlinNobSoul() {
-        super(ID, RARITY, SOUND);
-
-        ENEMY_KEYS.add("Gremlin Nob");
-        ENEMY_KEYS.add("Colosseum Nobs");
-
-        logger.info("GremlinNobSoul spawn condition:{}", this.canSpawn());
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     @Override

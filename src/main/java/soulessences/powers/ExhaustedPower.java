@@ -80,7 +80,7 @@ public class ExhaustedPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        if (this.amount > 1) {
+        if (this.amount >= 1) {
             this.flash();
 
             setEnergyToMin();
@@ -100,6 +100,7 @@ public class ExhaustedPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             if (this.amount == 1) {
+                AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "Feel my power!", true));
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
 
                 applyBuffs();

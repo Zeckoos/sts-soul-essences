@@ -17,10 +17,10 @@ public class GiantHeadSoul extends BaseRelic {
 
     private static final int SLOW_AMOUNT = 1;
 
-    public GiantHeadSoul() {
-        super(ID, RARITY, SOUND);
+    private static final String ENEMY_ID = "GiantHead";
 
-        ENEMY_KEYS.add("Giant Head");
+    public GiantHeadSoul() {
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     @Override

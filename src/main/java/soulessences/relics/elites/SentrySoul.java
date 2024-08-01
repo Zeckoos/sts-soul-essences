@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import soulessences.relics.BaseRelic;
 
-import static soulessences.SoulEssences.logger;
 import static soulessences.SoulEssences.makeID;
 
 public class SentrySoul extends BaseRelic {
@@ -15,12 +14,10 @@ public class SentrySoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
+    private static final String ENEMY_ID = "Sentry";
+
     public SentrySoul() {
-        super(ID, RARITY, SOUND);
-
-        ENEMY_KEYS.add("3 Sentries");
-
-        logger.info("SentrySoul spawn condition:{}", this.canSpawn());
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     public void onEquip() {

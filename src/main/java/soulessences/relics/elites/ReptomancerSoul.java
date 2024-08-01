@@ -16,12 +16,12 @@ public class ReptomancerSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
+    private static final String ENEMY_ID = "Reptomancer";
+
     private static final int CARDS_AMOUNT = 6;
 
     public ReptomancerSoul() {
-        super(ID, RARITY, SOUND);
-
-        ENEMY_KEYS.add("Reptomancer");
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     @Override

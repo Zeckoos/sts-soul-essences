@@ -14,7 +14,7 @@ import static soulessences.SoulEssences.makeID;
 public class BookOfStabbingSoul extends BaseRelic {
     public static final String ID = makeID("BookOfStabbingSoul");
 
-    private static final RelicTier RARITY = RelicTier.UNCOMMON;
+    private static final RelicTier RARITY = RelicTier.RARE;
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
@@ -22,13 +22,14 @@ public class BookOfStabbingSoul extends BaseRelic {
 
     private static final int COPIES = 2;
 
-    private final Random random;
+    private final Random RANDOM;
+
+    private static final String ENEMY_ID = "BookOfStabbing";
 
     public BookOfStabbingSoul() {
-        super(ID, RARITY, SOUND);
-        this.random = new Random();
+        super(ID, RARITY, SOUND, ENEMY_ID);
+        this.RANDOM = new Random();
 
-        ENEMY_KEYS.add("Book of Stabbing");
     }
 
     @Override
@@ -41,7 +42,7 @@ public class BookOfStabbingSoul extends BaseRelic {
         if (!firstAttackPlayed && card.type == AbstractCard.CardType.ATTACK) {
             firstAttackPlayed = true;
 
-            if (random.randomBoolean(0.85f)) {
+            if (RANDOM.randomBoolean(0.85f)) {
                 this.flash();
 
                 AbstractDungeon.actionManager.addToBottom(new CopyAttackAction(card, COPIES, (AbstractMonster) action.target));

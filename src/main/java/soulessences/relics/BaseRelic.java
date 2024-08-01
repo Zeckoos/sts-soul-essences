@@ -4,11 +4,11 @@ import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import soulessences.utils.PathManager;
 import soulessences.utils.TextureLoader;
-
-import java.util.HashSet;
-import java.util.Set;
 
 import static soulessences.SoulEssences.modID;
 
@@ -17,16 +17,20 @@ public abstract class BaseRelic extends CustomRelic {
 
     public RelicType relicType = RelicType.SHARED;
 
-    protected Set<String> ENEMY_KEYS = new HashSet<>();
+    private final String monsterID; // Links to the respective relic
 
-    public BaseRelic(String ID, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx) {
+    public BaseRelic(String ID, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx, String monsterID) {
         super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
 
         this.setPool(pool);
+
+        this.monsterID = monsterID;
     }
 
-    public BaseRelic(String ID, RelicTier tier, LandingSound sfx) {
+    public BaseRelic(String ID, RelicTier tier, LandingSound sfx, String monsterID) {
         super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
+
+        this.monsterID = monsterID;
     }
 
     private void setPool(AbstractCard.CardColor pool) {
@@ -49,7 +53,17 @@ public abstract class BaseRelic extends CustomRelic {
 
     @Override
     public boolean canSpawn() {
-        return ENEMY_KEYS.contains(AbstractDungeon.lastCombatMetricKey);
+        if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss
+                || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite)) {
+            return false;
+        }
+        // Check all monsters in the room to see if one matches the expected Monster ID
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (monsterID.equals(monster.id)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

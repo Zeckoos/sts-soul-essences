@@ -16,6 +16,8 @@ public class NemesisSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
+    private static final String ENEMY_ID = "Nemesis";
+
     private static final int INTANGIBLE_LIMIT = 3;
 
     private static final int INTANGIBLE_AMOUNT = 1;
@@ -23,9 +25,7 @@ public class NemesisSoul extends BaseRelic {
     private int INTANGIBLE_APPLIED = 0;
 
     public NemesisSoul() {
-        super(ID, RARITY, SOUND);
-
-        ENEMY_KEYS.add("Nemesis");
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     public void onEquip() {

@@ -16,14 +16,12 @@ public class LagavulinSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
+    private static final String ENEMY_ID = "Lagavulin";
+
     private static final int ASLEEP_AMOUNT = 3;
 
     public LagavulinSoul() {
-        super(ID, RARITY, SOUND);
-
-        ENEMY_KEYS.add("Lagavulin");
-        ENEMY_KEYS.add("Lagavulin Event");
-
+        super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
     @Override

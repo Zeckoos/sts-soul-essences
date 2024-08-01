@@ -8,14 +8,22 @@ public class PathManager {
     }
 
     public static String makeRelicPath(String resourcePath) {
-        return modID + "Resources/images/relics/" + resourcePath;
+        return makeImagePath("relics/") + resourcePath;
     }
 
     public static String makePowerPath32(String resourcePath) {
-        return modID + "Resources/images/powers/32/" + resourcePath;
+        return makeImagePath("powers/32/") + resourcePath;
     }
 
     public static String makePowerPath84(String resourcePath) {
-        return modID + "Resources/images/powers/84/" + resourcePath;
+        return makeImagePath("powers/84/") + resourcePath;
+    }
+
+    public static String makeMinionMovesPath(String resourcePath) {
+        return makeImagePath("minions/moves/") + resourcePath;
+    }
+
+    public static String makeMinionsPath(String resourcePath) {
+        return makeImagePath("minions/") + resourcePath;
     }
 }

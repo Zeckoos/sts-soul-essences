@@ -19,6 +19,12 @@
   "soulessences:EnragedPower": {
     "NAME": "Enraged",
     "DESCRIPTIONS": ["Give #b3 #yStrength if any of the enemies does not intent to attack."]
+  },
+
+  "soulessences:MitosisPower": {
+    "NAME": "Mitosis",
+    "DESCRIPTIONS": ["Activates when at or under #b50% of your max HP.",
+      " Creates a Slime Minion to help you."]
   }
 
 }

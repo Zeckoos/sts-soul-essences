@@ -30,8 +30,6 @@ public class ChargingPower extends AbstractPower {
 
     private static final Texture normalImage = TextureLoader.getTexture(PathManager.makePowerPath32("Charging.png"));
 
-    private int turnsLeft;
-
     private static final int DAMAGE_AMOUNT = 30;
 
     public ChargingPower(AbstractCreature owner, int amount) {
@@ -43,7 +41,6 @@ public class ChargingPower extends AbstractPower {
         this.type = PowerType.BUFF;
         this.region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
         this.region48 = new TextureAtlas.AtlasRegion(normalImage, 0, 0, normalImage.getWidth(), normalImage.getHeight());
-        this.turnsLeft = 3;
 
         this.updateDescription();
     }
@@ -51,10 +48,10 @@ public class ChargingPower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
-            if (turnsLeft >= 1) {
+            if (this.amount >= 1) {
                 this.flash();
 
-                turnsLeft--;
+                this.amount--;
             } else {
                 AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "Here it comes!", true));
 

@@ -19,7 +19,7 @@ public class GremlinNobSoul extends BaseRelic {
 
     private static final int ENRAGE_AMOUNT = 1;
 
-    private static final String ENEMY_ID = "GremlinNob";
+    private static final String[] ENEMY_ID = {"GremlinNob", "FF_GremlinNob"};
 
     public GremlinNobSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
@@ -34,6 +34,12 @@ public class GremlinNobSoul extends BaseRelic {
                 p.dialogY,3.0F, "ARGHHH!!!", true));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnragedPower(p, ENRAGE_AMOUNT), ENRAGE_AMOUNT));
+        this.grayscale = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.grayscale = false;
     }
 
     @Override

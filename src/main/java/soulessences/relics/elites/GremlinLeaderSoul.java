@@ -27,7 +27,7 @@ public class GremlinLeaderSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final String ENEMY_ID = "GremlinLeader";
+    private static final String[] ENEMY_ID = {"GremlinLeader"};
 
     private static final int BLOCK_AMOUNT = 11;
 
@@ -35,7 +35,7 @@ public class GremlinLeaderSoul extends BaseRelic {
 
     private static final int WEAK_AMOUNT = 2;
 
-    private static final int CHARGING_AMOUNT = 1;
+    private static final int CHARGING_AMOUNT = 3;
 
     private static final int DAMAGE_AMOUNT = 11;
 

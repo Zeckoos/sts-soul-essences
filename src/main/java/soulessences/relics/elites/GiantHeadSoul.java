@@ -17,7 +17,7 @@ public class GiantHeadSoul extends BaseRelic {
 
     private static final int SLOW_AMOUNT = 1;
 
-    private static final String ENEMY_ID = "GiantHead";
+    private static final String[] ENEMY_ID = {"GiantHead"};
 
     public GiantHeadSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);

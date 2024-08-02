@@ -5,10 +5,12 @@ import basemod.helpers.RelicType;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import soulessences.helpers.RelicDropManager;
 import soulessences.utils.PathManager;
 import soulessences.utils.TextureLoader;
+
+import java.util.Arrays;
 
 import static soulessences.SoulEssences.modID;
 
@@ -17,20 +19,20 @@ public abstract class BaseRelic extends CustomRelic {
 
     public RelicType relicType = RelicType.SHARED;
 
-    private final String monsterID; // Links to the respective relic
+    private final String[] monsterIDs; // Links to the respective relic
 
-    public BaseRelic(String ID, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx, String monsterID) {
+    public BaseRelic(String ID, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx, String[] monsterIDs) {
         super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
 
         this.setPool(pool);
 
-        this.monsterID = monsterID;
+        this.monsterIDs = monsterIDs;
     }
 
-    public BaseRelic(String ID, RelicTier tier, LandingSound sfx, String monsterID) {
+    public BaseRelic(String ID, RelicTier tier, LandingSound sfx, String[] monsterIDs) {
         super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
 
-        this.monsterID = monsterID;
+        this.monsterIDs = monsterIDs;
     }
 
     private void setPool(AbstractCard.CardColor pool) {
@@ -53,17 +55,24 @@ public abstract class BaseRelic extends CustomRelic {
 
     @Override
     public boolean canSpawn() {
-        if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss
-                || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite)) {
+        // Ensure the relic drops only if it matches the current enemy and no soul relic has been dropped yet
+        if (monsterIDs == null || !isInCombat() || !RelicDropManager.canDropSoulRelic(this.relicId)) {
             return false;
         }
-        // Check all monsters in the room to see if one matches the expected Monster ID
+
+        // Check if the correct monster ID matches
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (monsterID.equals(monster.id)) {
+            if (Arrays.asList(monsterIDs).contains(monster.id)) {
+                RelicDropManager.markSoulRelicDropped(this.relicId);
                 return true;
             }
         }
         return false;
+    }
+
+    // Utility method to ensure the relic is not dropped during events or other non-combat scenarios
+    private boolean isInCombat() {
+        return AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
     }
 
     @Override

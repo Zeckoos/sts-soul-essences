@@ -14,7 +14,7 @@ public class SentrySoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final String ENEMY_ID = "Sentry";
+    private static final String[] ENEMY_ID = {"Sentry", "FF_Sentry"};
 
     public SentrySoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);

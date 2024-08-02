@@ -16,7 +16,7 @@ public class LagavulinSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final String ENEMY_ID = "Lagavulin";
+    private static final String[] ENEMY_ID = {"Lagavulin", "FF_Lagavulin"};
 
     private static final int ASLEEP_AMOUNT = 3;
 
@@ -30,6 +30,12 @@ public class LagavulinSoul extends BaseRelic {
 
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ExhaustedPower(p, ASLEEP_AMOUNT), ASLEEP_AMOUNT));
+        this.grayscale = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.grayscale = false;
     }
 
     @Override

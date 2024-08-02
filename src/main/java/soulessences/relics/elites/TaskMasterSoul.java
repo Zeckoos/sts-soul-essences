@@ -16,7 +16,7 @@ public class TaskMasterSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final String ENEMY_ID = "SlaverBoss";
+    private static final String[] ENEMY_ID = {"SlaverBoss"};
 
     private static final int WEAK_AMOUNT = 3;
 

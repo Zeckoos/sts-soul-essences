@@ -3,30 +3,25 @@ package soulessences;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostBattleSubscriber;
+import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import hlysine.friendlymonsters.utils.MinionUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import soulessences.helpers.RelicDropManager;
 import soulessences.relics.BaseRelic;
 
 import java.nio.charset.StandardCharsets;
 
 @SpireInitializer
-public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostBattleSubscriber {
+public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostDungeonInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(SoulEssences.class.getName());
 
     public static final String modID = "soulessences";
@@ -86,12 +81,6 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
             }
     }
 
-    @Override
-    public void receivePostBattle(AbstractRoom abstractRoom) {
-        logger.info("End of battle: Clearing players minions.");
-        MinionUtils.clearMinions(AbstractDungeon.player);
-    }
-
     private void loadLocalization(String lang) {
         String relicPath = modID + "Resources/localization/" + lang + "/RelicStrings.json";
         BaseMod.loadCustomStringsFile(RelicStrings.class, relicPath);
@@ -119,5 +108,10 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    @Override
+    public void receivePostDungeonInitialize() {
+        RelicDropManager.resetDropState();
     }
 }

@@ -16,7 +16,7 @@ public class NemesisSoul extends BaseRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final String ENEMY_ID = "Nemesis";
+    private static final String[] ENEMY_ID = {"Nemesis"};
 
     private static final int INTANGIBLE_LIMIT = 3;
 

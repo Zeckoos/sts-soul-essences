@@ -18,7 +18,7 @@
 
   "soulessences:EnragedPower": {
     "NAME": "Enraged",
-    "DESCRIPTIONS": ["Give #b3 #yStrength if any of the enemies does not intent to attack."]
+    "DESCRIPTIONS": ["Give #b3 #yStrength and Lose #b3 #yDexterity if any of the enemies does not intent to attack."]
   },
 
   "soulessences:MitosisPower": {

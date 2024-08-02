@@ -12,7 +12,7 @@
     "NAMES": [
       "angry"
     ],
-    "DESCRIPTION": "Increases #yStrength by #b1 when taking attack damage."
+    "DESCRIPTION": "Increases #yStrength by #b2 when taking attack damage."
   },
 
   {
@@ -20,7 +20,7 @@
     "NAMES": [
       "charging"
     ],
-    "DESCRIPTION": "Deal #b30 damage after #b2 turns."
+    "DESCRIPTION": "Deal #b30 damage at the end of your turn after #b3 turns."
   },
 
   {
@@ -28,7 +28,7 @@
     "NAMES": [
       "enraged"
     ],
-    "DESCRIPTION": "Give #b3 #yStrength if any of the enemies does not intent to attack."
+    "DESCRIPTION": "Give #b3 #yStrength and Lose #b3 #yDexterity if any of the enemies does not intent to attack."
   },
 
   {

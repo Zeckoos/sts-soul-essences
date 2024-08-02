@@ -24,7 +24,7 @@ public class BookOfStabbingSoul extends BaseRelic {
 
     private final Random RANDOM;
 
-    private static final String ENEMY_ID = "BookOfStabbing";
+    private static final String[] ENEMY_ID = {"BookOfStabbing"};
 
     public BookOfStabbingSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);

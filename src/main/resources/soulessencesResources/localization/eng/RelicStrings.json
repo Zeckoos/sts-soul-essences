@@ -55,7 +55,7 @@
 
   "soulessences:SlimeBossSoul": {
     "NAME": "Slime Boss Soul",
-    "FLAVOR": "You gained the ability to excrete a slime minion when in danger.",
-    "DESCRIPTIONS": ["At the start of combat gain #ysoulessences:Mitosis."]
+    "FLAVOR": "You gained the ability to summon slime minions when in danger.",
+    "DESCRIPTIONS": ["Gain #b1 Orb Slot. At the start of combat, gain #ysoulessences:Mitosis."]
   }
 }

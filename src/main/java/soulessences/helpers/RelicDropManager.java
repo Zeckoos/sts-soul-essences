@@ -64,14 +64,11 @@ public class RelicDropManager {
             AbstractRelic relic = relicClass.getDeclaredConstructor().newInstance();
             switch (relic.tier) {
                 case COMMON:
-                    return true;
-                    //return Math.random() < 0.50; // 50% chance
+                    return Math.random() < 0.50; // 50% chance
                 case UNCOMMON:
-                    return true;
-                    //return Math.random() < 0.33; // 33% chance
+                    return Math.random() < 0.33; // 33% chance
                 case RARE:
-                    return true;
-                    //return Math.random() < 0.17; // 17% chance
+                    return Math.random() < 0.17; // 17% chance
                 case BOSS:
                     return true; // Boss relic will always drop
                 default:

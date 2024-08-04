@@ -36,7 +36,14 @@
     "NAMES": [
       "mitosis"
     ],
-    "DESCRIPTION": "Activates when under #b50% of max HP. Creates a Slime Minion to help you."
-  }
+    "DESCRIPTION": "Activates when at or under #b50% of your max HP. When taking unblocked damage, #ysoulessences:Summon a #bSlime #bMinion to help you."
+  },
 
+  {
+    "PROPER_NAME": "Summon",
+    "NAMES": [
+      "summon"
+    ],
+    "DESCRIPTION": "Creates a minion that occupy your orb slots."
+  }
 ]

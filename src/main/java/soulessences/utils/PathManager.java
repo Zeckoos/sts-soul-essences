@@ -19,11 +19,7 @@ public class PathManager {
         return makeImagePath("powers/84/") + resourcePath;
     }
 
-    public static String makeMinionMovesPath(String resourcePath) {
-        return makeImagePath("minions/moves/") + resourcePath;
-    }
-
-    public static String makeMinionsPath(String resourcePath) {
-        return makeImagePath("minions/") + resourcePath;
+    public static String makeMinionsAnimationPath(String resourcePath) {
+        return makeImagePath("animations/") + resourcePath;
     }
 }

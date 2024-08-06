@@ -20,12 +20,19 @@ public class EnragedAction extends AbstractGameAction {
         this.STR_INCREASE = str;
     }
 
+    private boolean isAttackIntent(AbstractMonster.Intent intent) {
+        return intent == AbstractMonster.Intent.ATTACK ||
+                intent == AbstractMonster.Intent.ATTACK_BUFF ||
+                intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
+                intent == AbstractMonster.Intent.ATTACK_DEFEND;
+    }
+
     @Override
     public void update() {
         boolean shouldApplyStrength = false;
 
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (monster != null && !monster.isDeadOrEscaped() && monster.getIntentBaseDmg() < 0) {
+            if (monster != null && !monster.isDeadOrEscaped() && isAttackIntent(monster.intent)) {
                 shouldApplyStrength = true;
                 break;
             }

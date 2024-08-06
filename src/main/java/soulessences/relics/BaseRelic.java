@@ -19,7 +19,7 @@ public abstract class BaseRelic extends CustomRelic {
 
     public RelicType relicType = RelicType.SHARED;
 
-    private final String[] monsterIDs; // Links to the respective relic
+    private String[] monsterIDs = new String[0]; // Links to the respective relic
 
     public BaseRelic(String ID, AbstractCard.CardColor pool, RelicTier tier, LandingSound sfx, String[] monsterIDs) {
         super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
@@ -33,6 +33,12 @@ public abstract class BaseRelic extends CustomRelic {
         super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
 
         this.monsterIDs = monsterIDs;
+
+    }
+
+    public BaseRelic(String ID, RelicTier tier, LandingSound sfx) {
+        super(ID, TextureLoader.getTexture(PathManager.makeRelicPath(ID.replace(modID + ":", "") + ".png")), tier, sfx);
+
     }
 
     private void setPool(AbstractCard.CardColor pool) {

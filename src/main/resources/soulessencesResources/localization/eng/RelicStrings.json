@@ -8,54 +8,90 @@
   "soulessences:SentrySoul": {
     "NAME": "Sentry Soul",
     "FLAVOR": "You feel quite confused with how these automatons have a soul...",
-    "DESCRIPTIONS": ["Draw #b2 additional cards every #b2 turns."]
+    "DESCRIPTIONS": ["Draw #b", " additional cards every #b", " turns."]
   },
 
   "soulessences:LagavulinSoul": {
     "NAME": "Lagavulin Soul",
     "FLAVOR": "You feel power growing and your body hardening. In return, you feel your movements are limited.",
-    "DESCRIPTIONS": ["Start each combat with #b3 #ysoulessences:Exhausted. Afterwards, gain #b8 #yMetallicize and #b3 #yStrength & #yDexterity."]
+    "DESCRIPTIONS": ["At the start of combat, gain #b", " #ysoulessences:Exhausted. Afterwards, Gains #b", " #yMetallicize and #b", " #yStrength & #yDexterity."]
   },
 
   "soulessences:BookOfStabbingSoul": {
     "NAME": "Book of Stabbing Soul",
     "FLAVOR": "You feel a bit more obsessed with stabbing.",
-    "DESCRIPTIONS": ["At the start of each turn, have an #y85% chance for the first Attack to be played thrice."]
+    "DESCRIPTIONS": ["At the start of each turn, have an #y85% chance for the first #yAttack to be played thrice."]
   },
 
   "soulessences:GremlinLeaderSoul": {
     "NAME": "Gremlin Leader Soul",
     "FLAVOR": "The remaining gremlins start to follows you.",
-    "DESCRIPTIONS": ["Every #b2 turns, receive #b2 random effects from Gremlins."]
+    "DESCRIPTIONS": ["Every #b", " turns, receive #b", " random effects from Gremlins."]
   },
 
   "soulessences:TaskMasterSoul": {
     "NAME": "Taskmaster Soul",
     "FLAVOR": "You feel a bit [REDACTED] towards certain enemies.",
-    "DESCRIPTIONS": ["At the start of every #b3 turns, apply #b3 #yWeak and #yVulnerable to ALL enemies."]
+    "DESCRIPTIONS": ["At the start of every #b", " turns, apply #b", " #yWeak and #yVulnerable to ALL enemies."]
   },
 
   "soulessences:GiantHeadSoul": {
     "NAME": "Giant Head Soul",
     "FLAVOR": "Your head feels a bit heavier.",
-    "DESCRIPTIONS": ["At the start of each combat, apply #ySlow to ALL enemies."]
+    "DESCRIPTIONS": ["At the start of combat, apply #ySlow to ALL enemies."]
   },
 
   "soulessences:NemesisSoul": {
     "NAME": "Nemesis Soul",
     "FLAVOR": "You feel death lurking but you aren't afraid to face it.",
-    "DESCRIPTIONS": ["Gain #b1 #yIntangible every #b2 turns. Can only gain up to #b3."]
+    "DESCRIPTIONS": ["Gains #b", " #yIntangible every #b", " turns. Can only gain up to #b", "."]
   },
 
   "soulessences:ReptomancerSoul": {
     "NAME": "Reptomancer Soul",
     "FLAVOR": "You gained the ability to summon poison daggers.",
-    "DESCRIPTIONS": ["At the start of each combat, #yShuffle #b6 Poisoned Stab with #b0 cost to the top of your deck."]
+    "DESCRIPTIONS": ["At the start of combat, shuffle #b", " Poisoned Stab with #b", " cost to the top of your deck."]
+  },
+
+  "soulessences:BottledThievesSoul": {
+    "NAME": "Bottled Thieves Soul",
+    "FLAVOR": "Who doesn't like gold???",
+    "DESCRIPTIONS": ["At the start of combat, gain #b", " #ysoulessences:Thievery."]
+  },
+
+  "soulessences:BottledCultistSoul": {
+    "NAME": "Bottled Cultist Soul",
+    "FLAVOR": "CAW CAW??",
+    "DESCRIPTIONS": ["At the start of combat, gain #b", " #yRitual."]
+  },
+
+  "soulessences:BottledRedSlaverSoul": {
+    "NAME": "Bottled Red Slaver Soul",
+    "FLAVOR": "Blue is my favourite colour.",
+    "DESCRIPTIONS": ["At the start of each turn, apply #b", " #yVulnerable to ALL enemies."]
+  },
+
+  "soulessences:BottledBlueSlaverSoul": {
+    "NAME": "Bottled Blue Slaver Soul",
+    "FLAVOR": "Red is my favourite colour.",
+    "DESCRIPTIONS": ["At the start of each turn, apply #b", " #yWeak to ALL enemies."]
   },
 
   "soulessences:SlimeBossSoul": {
     "NAME": "Slime Boss Soul",
     "FLAVOR": "You gained the ability to summon slime minions when in danger.",
-    "DESCRIPTIONS": ["Gain #b1 Orb Slot. At the start of combat, gain #ysoulessences:Mitosis."]
+    "DESCRIPTIONS": ["At the start of combat, gain #ysoulessences:Mitosis.", " NL #bInspired by the Slime Boss in #yDownfall mod."]
+  },
+
+  "soulessences:TheGuardianSoul": {
+    "NAME": "The Guardian Soul",
+    "FLAVOR": "Your body now grows spikes when taking damage.",
+    "DESCRIPTIONS": ["At the start of combat, gain #ysoulessences:Modeshift."]
+  },
+
+  "soulessences:HexaghostSoul": {
+    "NAME": "Hexaghost Soul",
+    "FLAVOR": "You feel your body burning with the ghost's power.",
+    "DESCRIPTIONS": ["At the start of combat, apply #ysoulessences:Shadowburn to a random enemy and #yshuffle #b", " #yBurn to the top of your deck."]
   }
 }

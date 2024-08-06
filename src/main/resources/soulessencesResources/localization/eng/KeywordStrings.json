@@ -4,7 +4,7 @@
     "NAMES": [
       "exhausted"
     ],
-    "DESCRIPTION": "Gain #b15% of your max HP as #yBlock, set your base [E] to #b1. NL Effects that add [E] will still applies."
+    "DESCRIPTION": "Gains #b15% of your max HP as #yBlock, set your base [E] to #b1. NL Effects that add [E] will still applies."
   },
 
   {
@@ -12,7 +12,7 @@
     "NAMES": [
       "angry"
     ],
-    "DESCRIPTION": "Increases #yStrength by #b2 when taking attack damage."
+    "DESCRIPTION": "Gains #yStrength by #b2 when taking attack damage."
   },
 
   {
@@ -20,7 +20,7 @@
     "NAMES": [
       "charging"
     ],
-    "DESCRIPTION": "Deal #b30 damage at the end of your turn after #b3 turns."
+    "DESCRIPTION": "Deals #b30 damage at the end of your turn after #b3 turns."
   },
 
   {
@@ -28,7 +28,7 @@
     "NAMES": [
       "enraged"
     ],
-    "DESCRIPTION": "Give #b3 #yStrength and Lose #b3 #yDexterity if any of the enemies does not intent to attack."
+    "DESCRIPTION": "Gains #b3 #yStrength and Lose #b3 #yDexterity if any of the enemies does not intent to attack."
   },
 
   {
@@ -36,14 +36,30 @@
     "NAMES": [
       "mitosis"
     ],
-    "DESCRIPTION": "Activates when at or under #b50% of your max HP. When taking unblocked damage, #ysoulessences:Summon a #bSlime #bMinion to help you."
+    "DESCRIPTION": "Activates when at or under #b50% of your max HP. When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."
   },
 
   {
-    "PROPER_NAME": "Summon",
+    "PROPER_NAME": "Modeshift",
     "NAMES": [
-      "summon"
+      "modeshift"
     ],
-    "DESCRIPTION": "Creates a minion that occupy your orb slots."
+    "DESCRIPTION": "When total unblocked damage exceed the threshold, Gains #b12 #yThorns."
+  },
+
+  {
+    "PROPER_NAME": "Shadowburn",
+    "NAMES": [
+      "shadowburn"
+    ],
+    "DESCRIPTION": "Damage is calculated by #b(H+1) multiply by #b3 damage where #bH is the monster's current HP divided by #b12 (rounded down)."
+  },
+
+  {
+    "PROPER_NAME": "Thievery",
+    "NAMES": [
+      "thievery"
+    ],
+    "DESCRIPTION": "Gains #b15 gold for each unblock damage dealt."
   }
 ]

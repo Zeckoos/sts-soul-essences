@@ -20,6 +20,8 @@ public class ReptomancerSoul extends BaseRelic {
 
     private static final int CARDS_AMOUNT = 6;
 
+    private static final int CARD_COST = 0;
+
     public ReptomancerSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
@@ -38,6 +40,11 @@ public class ReptomancerSoul extends BaseRelic {
     @Override
     public void onVictory() {
         this.grayscale = false;
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + CARDS_AMOUNT + DESCRIPTIONS[1] + CARD_COST + DESCRIPTIONS[2];
     }
 
     @Override

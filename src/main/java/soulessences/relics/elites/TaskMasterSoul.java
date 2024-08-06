@@ -18,9 +18,13 @@ public class TaskMasterSoul extends BaseRelic {
 
     private static final String[] ENEMY_ID = {"SlaverBoss"};
 
+    private static final int MAX_TURNS = 3;
+
     private static final int WEAK_AMOUNT = 3;
 
     private static final int STR_AMOUNT = 3;
+
+    private static final int DEBUFF_AMOUNT = 3;
 
     public TaskMasterSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
@@ -48,6 +52,11 @@ public class TaskMasterSoul extends BaseRelic {
     @Override
     public void onVictory() {
         this.counter = 0;
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + MAX_TURNS + DESCRIPTIONS[1] + DEBUFF_AMOUNT + DESCRIPTIONS[2];
     }
 
     @Override

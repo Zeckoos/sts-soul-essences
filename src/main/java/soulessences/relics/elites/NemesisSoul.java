@@ -22,6 +22,8 @@ public class NemesisSoul extends BaseRelic {
 
     private static final int INTANGIBLE_AMOUNT = 1;
 
+    private static final int MAX_TURNS = 2;
+
     private int INTANGIBLE_APPLIED = 0;
 
     public NemesisSoul() {
@@ -65,6 +67,10 @@ public class NemesisSoul extends BaseRelic {
         this.grayscale = false; // Revert the mark
     }
 
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + INTANGIBLE_AMOUNT + DESCRIPTIONS[1] + MAX_TURNS + DESCRIPTIONS[2] + INTANGIBLE_LIMIT + DESCRIPTIONS[3];
+    }
     @Override
     public AbstractRelic makeCopy() {
         return new NemesisSoul();

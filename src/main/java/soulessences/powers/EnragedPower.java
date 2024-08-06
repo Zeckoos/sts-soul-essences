@@ -25,7 +25,7 @@ public class EnragedPower extends AbstractPower {
 
     private static final Texture normalImage = TextureLoader.getTexture(PathManager.makePowerPath32("Enraged.png"));
 
-    private static final int STR_AMOUNT = 3;
+    private static final int STR_DEX_AMOUNT = 3;
 
     public EnragedPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -47,11 +47,11 @@ public class EnragedPower extends AbstractPower {
     public void atStartOfTurn() {
         this.flash();
 
-        this.addToBot(new EnragedAction(STR_AMOUNT));
+        this.addToBot(new EnragedAction(STR_DEX_AMOUNT));
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + STR_DEX_AMOUNT + DESCRIPTIONS[1] + STR_DEX_AMOUNT + DESCRIPTIONS[2];
     }
 }

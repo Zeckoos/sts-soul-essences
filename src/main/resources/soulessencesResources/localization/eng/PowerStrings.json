@@ -2,28 +2,43 @@
   "soulessences:ExhaustedPower": {
     "NAME": "Exhausted",
     "DESCRIPTIONS": [
-      "Gain #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies."
+      "Gains #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies."
     ]
   },
 
   "soulessences:AngryPower": {
     "NAME": "Angry",
-    "DESCRIPTIONS": ["Increases #yStrength by #b", " when taking attack damage."]
+    "DESCRIPTIONS": ["Gains #yStrength by #b", " when taking attack damage."]
   },
 
   "soulessences:ChargingPower": {
     "NAME": "Charging",
-    "DESCRIPTIONS": ["Deal #b30 damage at the end of your turn after #b3 turns."]
+    "DESCRIPTIONS": ["Deals #b", " damage at the end of your turn after #b", " turns."]
   },
 
   "soulessences:EnragedPower": {
     "NAME": "Enraged",
-    "DESCRIPTIONS": ["Give #b3 #yStrength and Lose #b3 #yDexterity if any of the enemies does not intent to attack."]
+    "DESCRIPTIONS": ["Gains #b", " #yStrength and Lose #b", " #yDexterity if any of the enemies does not intent to attack."]
+  },
+
+  "soulessences:ThieveryPower": {
+    "NAME": "Thievery",
+    "DESCRIPTIONS": ["Gains #b", " gold for each unblock damage dealt."]
   },
 
   "soulessences:MitosisPower": {
     "NAME": "Mitosis",
     "DESCRIPTIONS": ["Activates when at or under #b50% of your max HP.",
-      " When taking unblocked damage, #ysoulessences:Summon a #bSlime #bMinion to help you."]
+      " When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."]
+  },
+
+  "soulessences:ModeshiftPower": {
+    "NAME": "Modeshift",
+    "DESCRIPTIONS": ["When total unblocked damage exceeds #b", ", Gains #b", " #yThorns."]
+  },
+
+  "soulessences:ShadowburnPower": {
+    "NAME": "Shadowburn",
+    "DESCRIPTIONS": ["Deals #b", " true damage."]
   }
 }

@@ -60,11 +60,12 @@ public class ChargingPower extends AbstractPower {
 
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
+            this.updateDescription();
         }
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0] + DAMAGE_AMOUNT + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 }

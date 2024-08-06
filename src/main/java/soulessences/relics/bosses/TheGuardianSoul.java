@@ -4,23 +4,23 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import soulessences.powers.MitosisPower;
+import soulessences.powers.ModeshiftPower;
 import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.makeID;
 
-public class SlimeBossSoul extends BaseRelic {
-    public static final String ID = makeID("SlimeBossSoul");
+public class TheGuardianSoul extends BaseRelic {
+    public static final String ID = makeID("TheGuardianSoul");
 
     private static final RelicTier RARITY = RelicTier.BOSS;
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final int MITOSIS_AMOUNT = 1;
+    private static final String[] ENEMY_ID = {"TheGuardian"};
 
-    private static final String[] ENEMY_ID = {"SlimeBoss"};
+    private static final int DMG_THRESHOLD = 25;
 
-    public SlimeBossSoul() {
+    public TheGuardianSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
@@ -28,7 +28,8 @@ public class SlimeBossSoul extends BaseRelic {
         this.flash();
 
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MitosisPower(p, MITOSIS_AMOUNT), MITOSIS_AMOUNT));
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ModeshiftPower(AbstractDungeon.player, DMG_THRESHOLD)));
 
         this.grayscale = true;
     }
@@ -39,12 +40,8 @@ public class SlimeBossSoul extends BaseRelic {
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + DESCRIPTIONS[1];
+    public AbstractRelic makeCopy() {
+        return new TheGuardianSoul();
     }
 
-    @Override
-    public AbstractRelic makeCopy() {
-        return new SlimeBossSoul();
-    }
 }

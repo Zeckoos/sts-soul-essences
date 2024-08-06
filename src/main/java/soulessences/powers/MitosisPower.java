@@ -3,7 +3,6 @@ package soulessences.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -47,7 +46,7 @@ public class MitosisPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        if (owner.currentHealth <= owner.maxHealth / 2) {
+        if (owner.currentHealth <= owner.maxHealth / 2 && owner.lastDamageTaken > 0) {
             activateMitosis();
         }
     }

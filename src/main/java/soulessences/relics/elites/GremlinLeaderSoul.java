@@ -29,6 +29,10 @@ public class GremlinLeaderSoul extends BaseRelic {
 
     private static final String[] ENEMY_ID = {"GremlinLeader"};
 
+    private static final int EFFECT_AMOUNT = 2;
+
+    private static final int MAX_TURNS = 2;
+
     private static final int BLOCK_AMOUNT = 11;
 
     private static final int ANGRY_AMOUNT = 2;
@@ -83,6 +87,11 @@ public class GremlinLeaderSoul extends BaseRelic {
     @Override
     public void onVictory() {
         this.counter = 0;
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + MAX_TURNS + DESCRIPTIONS[1] + EFFECT_AMOUNT + DESCRIPTIONS[2];
     }
 
     @Override

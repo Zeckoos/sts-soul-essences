@@ -16,6 +16,10 @@ public class SentrySoul extends BaseRelic {
 
     private static final String[] ENEMY_ID = {"Sentry", "FF_Sentry"};
 
+    private static final int DRAW_AMOUNT = 2;
+
+    private static final int MAX_TURNS = 2;
+
     public SentrySoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
@@ -45,6 +49,11 @@ public class SentrySoul extends BaseRelic {
     @Override
     public void onVictory() {
         this.counter = 0;
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + DRAW_AMOUNT + DESCRIPTIONS[1] + MAX_TURNS + DESCRIPTIONS[2];
     }
 
     @Override

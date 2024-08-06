@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,7 +18,7 @@ import soulessences.utils.TextureLoader;
 import static soulessences.SoulEssences.makeID;
 
 public class ShadowburnPower extends AbstractPower {
-    public static final String POWER_ID = makeID("ShadowBurnPower");
+    public static final String POWER_ID = makeID("ShadowburnPower");
 
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
@@ -29,10 +30,11 @@ public class ShadowburnPower extends AbstractPower {
 
     private static final Texture normalImage = TextureLoader.getTexture(PathManager.makePowerPath32("ShadowBurn.png"));
 
-    public ShadowburnPower(AbstractCreature owner) {
+    public ShadowburnPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
+        this.amount = amount;
         this.type = PowerType.DEBUFF;
         this.isTurnBased = true;
 
@@ -43,6 +45,14 @@ public class ShadowburnPower extends AbstractPower {
     }
 
     @Override
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (damageAmount > 0 && info.type != DamageInfo.DamageType.THORNS && info.owner != this.owner) {
+            this.updateDescription();
+        }
+        return damageAmount;
+    }
+
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (!isPlayer) {
             int damage = calculateDamage();
@@ -50,7 +60,13 @@ public class ShadowburnPower extends AbstractPower {
                     new DamageAction(owner, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE)
             );
 
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+            if (this.amount == 1) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+            }
+
+            else {
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
+            }
         }
     }
 

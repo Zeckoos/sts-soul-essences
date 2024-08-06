@@ -29,6 +29,11 @@ public class BottledRedSlaverSoul extends BaseRelic {
     }
 
     @Override
+    public boolean canSpawn() {
+        return true;
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + VULNERABLE_AMOUNT + DESCRIPTIONS[1];
     }

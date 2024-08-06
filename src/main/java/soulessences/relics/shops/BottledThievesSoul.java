@@ -38,6 +38,11 @@ public class BottledThievesSoul extends BaseRelic {
     }
 
     @Override
+    public boolean canSpawn() {
+        return true;
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + STEAL_AMOUNT + DESCRIPTIONS[1];
     }

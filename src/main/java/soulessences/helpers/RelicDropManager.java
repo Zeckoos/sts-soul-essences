@@ -3,6 +3,9 @@ package soulessences.helpers;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import soulessences.relics.bosses.HexaghostSoul;
+import soulessences.relics.bosses.SlimeBossSoul;
+import soulessences.relics.bosses.TheGuardianSoul;
 import soulessences.relics.elites.*;
 
 import java.util.HashMap;
@@ -26,6 +29,9 @@ public class RelicDropManager {
         monsterRelicMap.put("GiantHead", GiantHeadSoul.class);
         monsterRelicMap.put("Nemesis", NemesisSoul.class);
         monsterRelicMap.put("Reptomancer", ReptomancerSoul.class);
+        monsterRelicMap.put("SlimeBoss", SlimeBossSoul.class);
+        monsterRelicMap.put("TheGuardian", TheGuardianSoul.class);
+        monsterRelicMap.put("Hexaghost", HexaghostSoul.class);
     }
 
     public static void tryDropRelic(AbstractMonster monster) {

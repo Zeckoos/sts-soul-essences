@@ -23,6 +23,8 @@ public class HexaghostSoul extends BaseRelic {
 
     private static final int CARDS_AMOUNT = 3;
 
+    private static final int MAX_TURNS = 3;
+
     public HexaghostSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
@@ -41,7 +43,7 @@ public class HexaghostSoul extends BaseRelic {
         AbstractCreature target = AbstractDungeon.getRandomMonster();
 
         if (target != null) {
-            this.addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new ShadowburnPower(target), 1));
+            this.addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new ShadowburnPower(target, MAX_TURNS), MAX_TURNS));
         }
 
         this.grayscale = true;

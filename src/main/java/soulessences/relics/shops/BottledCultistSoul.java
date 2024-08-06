@@ -37,6 +37,11 @@ public class BottledCultistSoul extends BaseRelic {
     }
 
     @Override
+    public boolean canSpawn() {
+        return true;
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + RITUAL_AMOUNT + DESCRIPTIONS[1];
     }

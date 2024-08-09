@@ -52,7 +52,7 @@
     "NAMES": [
       "shadowburn"
     ],
-    "DESCRIPTION": "Damage is calculated by #b(H+1) multiply by #b3 damage where #bH is the monster's current HP divided by #b12 (rounded down)."
+    "DESCRIPTION": "Damage is calculated by #b(H+1) multiply by #b3 damage where #bH is half of the monster's current HP divided by #b12 (rounded down)."
   },
 
   {

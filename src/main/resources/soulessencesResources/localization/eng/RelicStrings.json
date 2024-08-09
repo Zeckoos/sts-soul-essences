@@ -92,6 +92,6 @@
   "soulessences:HexaghostSoul": {
     "NAME": "Hexaghost Soul",
     "FLAVOR": "You feel your body burning with the ghost's power.",
-    "DESCRIPTIONS": ["At the start of combat, apply #ysoulessences:Shadowburn to a random enemy and shuffle #b", " #yBurn to the top of your deck."]
+    "DESCRIPTIONS": ["At the start of combat, apply #ysoulessences:Shadowburn #b", " times to random enemies and shuffle #b", " #yBurn to the top of your deck."]
   }
 }

@@ -39,12 +39,15 @@ public class HexaghostSoul extends BaseRelic {
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(card, 1, true, true));
         }
 
-        // Apply ShadowBurnPower to a random enemy at the start of battle
-        AbstractCreature target = AbstractDungeon.getRandomMonster();
+        for (int i = 0; i < MAX_TURNS; i++) {
+            // Apply ShadowBurnPower to a random enemy at the start of battle
+            AbstractCreature target = AbstractDungeon.getRandomMonster();
 
-        if (target != null) {
-            this.addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new ShadowburnPower(target, MAX_TURNS), MAX_TURNS));
+            if (target != null) {
+                this.addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new ShadowburnPower(target, 1), 1));
+            }
         }
+
 
         this.grayscale = true;
     }
@@ -56,7 +59,7 @@ public class HexaghostSoul extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + CARDS_AMOUNT + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0] + MAX_TURNS + DESCRIPTIONS[1] + CARDS_AMOUNT + DESCRIPTIONS[2];
     }
 
     @Override

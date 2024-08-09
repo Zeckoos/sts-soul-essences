@@ -24,7 +24,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>SoulEssences</name>
-    <version>1.3</version>
+    <version>1.3.2</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>This mod adds soul essences as relics which can be dropped from enemies that will have similar effects to their not so soul-ly counterpart.

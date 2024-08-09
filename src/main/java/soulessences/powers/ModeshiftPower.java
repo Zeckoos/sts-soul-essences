@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import static soulessences.SoulEssences.makeID;
 
 public class ModeshiftPower extends AbstractPower {
-    public static final String POWER_ID = makeID("ModeShiftPower");
+    public static final String POWER_ID = makeID("ModeshiftPower");
 
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 

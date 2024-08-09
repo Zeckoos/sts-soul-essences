@@ -72,7 +72,7 @@ public class ShadowburnPower extends AbstractPower {
 
     private int calculateDamage() {
         int currentHp = owner.currentHealth;
-        int H = currentHp / 12;
+        int H = (currentHp / 2) / 12;
         return (H + 1) * 3;
     }
 

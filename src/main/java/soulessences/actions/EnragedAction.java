@@ -32,7 +32,7 @@ public class EnragedAction extends AbstractGameAction {
         boolean shouldApplyStrength = false;
 
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if (monster != null && !monster.isDeadOrEscaped() && isAttackIntent(monster.intent)) {
+            if (monster != null && !monster.isDeadOrEscaped() && !isAttackIntent(monster.intent)) {
                 shouldApplyStrength = true;
                 break;
             }

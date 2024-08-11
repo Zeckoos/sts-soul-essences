@@ -13,7 +13,7 @@
 
   "soulessences:ChargingPower": {
     "NAME": "Charging",
-    "DESCRIPTIONS": ["Deals #b", " damage at the end of your turn after #b", " turns."]
+    "DESCRIPTIONS": ["Deals #b", " damage at the end of your turn after #b", " turns.", " NL Current turn: #b", "."]
   },
 
   "soulessences:EnragedPower": {
@@ -23,7 +23,7 @@
 
   "soulessences:ThieveryPower": {
     "NAME": "Thievery",
-    "DESCRIPTIONS": ["Gains #b", " gold for each unblock damage dealt."]
+    "DESCRIPTIONS": ["Gains #b", " gold for each unblock damage dealt. Removed at end of turn."]
   },
 
   "soulessences:MitosisPower": {

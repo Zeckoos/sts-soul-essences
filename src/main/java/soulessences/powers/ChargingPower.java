@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -32,6 +33,10 @@ public class ChargingPower extends AbstractPower {
 
     private static final int DAMAGE_AMOUNT = 30;
 
+    private static final int MAX_TURNS = 3;
+
+    private static int CURRENT_TURN = 1;
+
     public ChargingPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -48,24 +53,39 @@ public class ChargingPower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
-            if (this.amount >= 1) {
+            if (CURRENT_TURN < MAX_TURNS) {
                 this.flash();
 
-                this.amount--;
-            } else {
+                CURRENT_TURN++;
+            }
+
+            else {
+                CURRENT_TURN = 0;
+
                 AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "Here it comes!", true));
 
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(DAMAGE_AMOUNT, true),
                         DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, this, 1));
+            }
+
+            if (this.amount <= 0) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
+
             this.updateDescription();
         }
     }
 
+    // Reset turn counter for applying effect
+    @Override
+    public void onVictory() {
+        CURRENT_TURN = 0;
+    }
+
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + DAMAGE_AMOUNT + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + DAMAGE_AMOUNT + DESCRIPTIONS[1] + MAX_TURNS + DESCRIPTIONS[2] + DESCRIPTIONS[3] + CURRENT_TURN + DESCRIPTIONS[4];
     }
 }

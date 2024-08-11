@@ -80,7 +80,7 @@
   "soulessences:SlimeBossSoul": {
     "NAME": "Slime Boss Soul",
     "FLAVOR": "You gained the ability to summon slime minions when in danger.",
-    "DESCRIPTIONS": ["At the start of combat, gain #ysoulessences:Mitosis.", " NL #bInspired by the Slime Boss in #yDownfall mod."]
+    "DESCRIPTIONS": ["At the start of combat, gain #ysoulessences:Mitosis.", "soulessences:downfall"]
   },
 
   "soulessences:TheGuardianSoul": {
@@ -93,5 +93,29 @@
     "NAME": "Hexaghost Soul",
     "FLAVOR": "You feel your body burning with the ghost's power.",
     "DESCRIPTIONS": ["At the start of combat, apply #ysoulessences:Shadowburn #b", " times to random enemies and shuffle #b", " #yBurn to the top of your deck."]
+  },
+
+  "soulessences:IroncladSoul": {
+    "NAME": "Ironclad Soul",
+    "FLAVOR": "One of many Ironclads, fallen but not gone.",
+    "DESCRIPTIONS": ["Whenever an enemy with more than half of your max HP dies, #yHeal #b", " HP and gain #b", " max HP.", "soulessences:Bento_Baker_Praymordis"]
+  },
+
+  "soulessences:SilentSoul": {
+    "NAME": "Silent Soul",
+    "FLAVOR": "A deadly huntress from the Foglands.",
+    "DESCRIPTIONS": ["At the start of each turn, you can #yScry up to #b", " cards and draw #b", " additional card.", "soulessences:Bento_Baker_Praymordis"]
+  },
+
+  "soulessences:DefectSoul": {
+    "NAME": "Defect Soul",
+    "FLAVOR": "Combat automaton which became self-aware and somehow gained a soul.",
+    "DESCRIPTIONS": ["At the start of combat, gain #b", " orb slot, #b", " #yHeatsinks and #yChannel #b", " #yPlasma.", "soulessences:Bento_Baker_Praymordis"]
+  },
+
+  "soulessences:WatcherSoul": {
+    "NAME": "Watcher Soul",
+    "FLAVOR": "A blind ascetic who has come to \"Evaluate\" the Spire.",
+    "DESCRIPTIONS": ["Every #b", " turns, right click to activate this relic. Add #b", " #yEthereal #ySmite and #ySafety to your hand.", "soulessences:Bento_Baker_Praymordis"]
   }
 }

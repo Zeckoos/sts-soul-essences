@@ -19,6 +19,10 @@ public class ThieveryPower extends AbstractPower {
 
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    private static final int MAX_ATTACKS = 3;
+
+    private static int ATTACK_COUNTER;
+
     public ThieveryPower(AbstractCreature owner, int goldAmount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -27,14 +31,24 @@ public class ThieveryPower extends AbstractPower {
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
 
+        ATTACK_COUNTER = 0;
+
         this.loadRegion("thievery");
         this.updateDescription();
     }
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount > 0 && info.owner == this.owner && !target.isPlayer) {
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(this.amount));
+        if (ATTACK_COUNTER < MAX_ATTACKS) {
+            this.flash();
+            if (damageAmount > 0 && info.owner == this.owner && !target.isPlayer) {
+                AbstractDungeon.actionManager.addToBottom(new GainGoldAction(this.amount));
+            }
+        }
+        ATTACK_COUNTER++;
+
+        if (ATTACK_COUNTER >= MAX_ATTACKS) {
+            this.addToTop(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
     }
 
@@ -43,6 +57,11 @@ public class ThieveryPower extends AbstractPower {
         if (isPlayer) {
             this.addToTop(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
+    }
+
+    @Override
+    public void onVictory() {
+        ATTACK_COUNTER = 0;
     }
 
     @Override

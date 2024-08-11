@@ -61,5 +61,21 @@
       "thievery"
     ],
     "DESCRIPTION": "Gains #b15 gold for each unblock damage dealt."
+  },
+
+  {
+    "PROPER_NAME": "Downfall",
+    "NAMES": [
+      "downfall"
+    ],
+    "DESCRIPTION": "A relic inspired by the #bSlimeBoss in the #bDownfall mod."
+  },
+
+  {
+    "PROPER_NAME": "Bento Baker Praymordis",
+    "NAMES": [
+      "Bento_Baker_Praymordis"
+    ],
+    "DESCRIPTION": "A relic inspired by #bBento #bBaker #bPraymordis."
   }
 ]

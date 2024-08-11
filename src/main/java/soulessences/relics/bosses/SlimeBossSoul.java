@@ -1,8 +1,10 @@
 package soulessences.relics.bosses;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import soulessences.powers.MitosisPower;
 import soulessences.relics.BaseRelic;
@@ -22,6 +24,8 @@ public class SlimeBossSoul extends BaseRelic {
 
     public SlimeBossSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
+
+        setDescriptionWithCard();
     }
 
     public void atBattleStart() {
@@ -38,9 +42,12 @@ public class SlimeBossSoul extends BaseRelic {
         this.grayscale = false;
     }
 
-    @Override
-    public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + DESCRIPTIONS[1];
+    public void setDescriptionWithCard() {
+        this.tips.clear();
+        this.description = this.DESCRIPTIONS[0];
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip(BaseMod.getKeywordTitle(this.DESCRIPTIONS[1]), BaseMod.getKeywordDescription(this.DESCRIPTIONS[1])));
+        initializeTips();
     }
 
     @Override

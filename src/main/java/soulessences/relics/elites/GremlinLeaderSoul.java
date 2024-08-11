@@ -39,7 +39,7 @@ public class GremlinLeaderSoul extends BaseRelic {
 
     private static final int WEAK_AMOUNT = 2;
 
-    private static final int CHARGING_AMOUNT = 3;
+    private static final int CHARGING_AMOUNT = 1;
 
     private static final int DAMAGE_AMOUNT = 11;
 
@@ -47,6 +47,7 @@ public class GremlinLeaderSoul extends BaseRelic {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
+    @Override
     public void onEquip() {
         this.counter = 0;
     }

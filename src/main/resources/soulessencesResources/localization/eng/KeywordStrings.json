@@ -4,7 +4,7 @@
     "NAMES": [
       "exhausted"
     ],
-    "DESCRIPTION": "Gains #b15% of your max HP as #yBlock, set your base [E] to #b1. NL Effects that add [E] will still applies."
+    "DESCRIPTION": "Gain #b15% of your max HP as #yBlock, set your base [E] to #b1. NL Effects that add [E] will still applies."
   },
 
   {
@@ -12,7 +12,7 @@
     "NAMES": [
       "angry"
     ],
-    "DESCRIPTION": "Gains #yStrength by #b2 when taking attack damage."
+    "DESCRIPTION": "Gain #yStrength by #b2 when taking attack damage."
   },
 
   {
@@ -20,7 +20,7 @@
     "NAMES": [
       "charging"
     ],
-    "DESCRIPTION": "Deals #b30 damage at the end of your turn after #b3 turns."
+    "DESCRIPTION": "Deal #b30 damage at the end of your turn after #b3 turns."
   },
 
   {
@@ -28,7 +28,7 @@
     "NAMES": [
       "enraged"
     ],
-    "DESCRIPTION": "Gains #b3 #yStrength and Lose #b3 #yDexterity if any of the enemies does not intent to attack."
+    "DESCRIPTION": "Gain #b1 #yStrength and Lose #b1 #yDexterity if any of the enemies does not intent to attack."
   },
 
   {
@@ -36,7 +36,7 @@
     "NAMES": [
       "mitosis"
     ],
-    "DESCRIPTION": "Activates when at or under #b50% of your max HP. When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."
+    "DESCRIPTION": "Activate when at or under #b50% of your max HP. When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."
   },
 
   {
@@ -60,7 +60,7 @@
     "NAMES": [
       "thievery"
     ],
-    "DESCRIPTION": "Gains #b15 gold for each unblock damage dealt."
+    "DESCRIPTION": "Gain #b15 gold for each unblock damage dealt."
   },
 
   {

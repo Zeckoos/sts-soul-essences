@@ -44,7 +44,7 @@
   "soulessences:NemesisSoul": {
     "NAME": "Nemesis Soul",
     "FLAVOR": "You feel death lurking but you aren't afraid to face it.",
-    "DESCRIPTIONS": ["Gains #b", " #yIntangible every #b", " turns. Can only gain up to #b", "."]
+    "DESCRIPTIONS": ["Gains #b", " #yBuffer every #b", " turns. Can only gain up to #b", "."]
   },
 
   "soulessences:ReptomancerSoul": {

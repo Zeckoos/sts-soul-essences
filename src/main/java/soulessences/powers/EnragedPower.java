@@ -25,7 +25,7 @@ public class EnragedPower extends AbstractPower {
 
     private static final Texture normalImage = TextureLoader.getTexture(PathManager.makePowerPath32("Enraged.png"));
 
-    private static final int STR_DEX_AMOUNT = 3;
+    private static final int STR_DEX_AMOUNT = 1;
 
     public EnragedPower(AbstractCreature owner, int amount) {
         this.name = NAME;

@@ -3,7 +3,7 @@ package soulessences.relics.elites;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
+import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import soulessences.relics.BaseRelic;
 
@@ -18,18 +18,17 @@ public class NemesisSoul extends BaseRelic {
 
     private static final String[] ENEMY_ID = {"Nemesis"};
 
-    private static final int INTANGIBLE_LIMIT = 3;
+    private static final int BUFFER_LIMIT = 3; // The maximum number of Buffer applications
+    private static final int BUFFER_AMOUNT = 1; // The amount of Buffer applied each time
+    private static final int MAX_TURNS = 3; // The number of turns after which Buffer is applied
 
-    private static final int INTANGIBLE_AMOUNT = 1;
-
-    private static final int MAX_TURNS = 2;
-
-    private int INTANGIBLE_APPLIED = 0;
+    private int bufferApplied = 0;
 
     public NemesisSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
 
+    @Override
     public void onEquip() {
         this.counter = 0;
     }
@@ -44,32 +43,32 @@ public class NemesisSoul extends BaseRelic {
             ++this.counter;
         }
 
-        if (this.counter % 2 == 0 && INTANGIBLE_APPLIED != INTANGIBLE_LIMIT) {
-            INTANGIBLE_APPLIED++;
+        if (this.counter % MAX_TURNS == 0 && bufferApplied < BUFFER_LIMIT) {
+            bufferApplied++;
             this.counter = 0;
 
             this.flash();
 
             AbstractPlayer p = AbstractDungeon.player;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePower(p, INTANGIBLE_AMOUNT)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, BUFFER_AMOUNT)));
         }
-        else {
+
+        else if (bufferApplied == BUFFER_LIMIT){
             this.grayscale = true; // Mark the relic gray
         }
     }
 
-    // Reset relic's counter
     @Override
     public void onVictory() {
         this.counter = 0;
-        INTANGIBLE_APPLIED = 0;
+        bufferApplied = 0;
 
         this.grayscale = false; // Revert the mark
     }
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + INTANGIBLE_AMOUNT + DESCRIPTIONS[1] + MAX_TURNS + DESCRIPTIONS[2] + INTANGIBLE_LIMIT + DESCRIPTIONS[3];
+        return DESCRIPTIONS[0] + BUFFER_AMOUNT + DESCRIPTIONS[1] + MAX_TURNS + DESCRIPTIONS[2] + BUFFER_LIMIT + DESCRIPTIONS[3];
     }
     @Override
     public AbstractRelic makeCopy() {

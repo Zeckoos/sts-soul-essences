@@ -2,33 +2,33 @@
   "soulessences:ExhaustedPower": {
     "NAME": "Exhausted",
     "DESCRIPTIONS": [
-      "Gains #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies."
+      "Gain #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies."
     ]
   },
 
   "soulessences:AngryPower": {
     "NAME": "Angry",
-    "DESCRIPTIONS": ["Gains #yStrength by #b", " when taking attack damage."]
+    "DESCRIPTIONS": ["Gain #yStrength by #b", " when taking attack damage."]
   },
 
   "soulessences:ChargingPower": {
     "NAME": "Charging",
-    "DESCRIPTIONS": ["Deals #b", " damage at the end of your turn after #b", " turns.", " NL Current turn: #b", "."]
+    "DESCRIPTIONS": ["Deal #b", " damage at the end of your turn after #b", " turns.", " NL Current turn: #b", "."]
   },
 
   "soulessences:EnragedPower": {
     "NAME": "Enraged",
-    "DESCRIPTIONS": ["Gains #b", " #yStrength and Lose #b", " #yDexterity if any of the enemies does not intent to attack."]
+    "DESCRIPTIONS": ["Gain #b", " #yStrength and Lose #b", " #yDexterity if any of the enemies does not intent to attack."]
   },
 
   "soulessences:ThieveryPower": {
     "NAME": "Thievery",
-    "DESCRIPTIONS": ["Gains #b", " gold for each unblock damage dealt. Removed at end of turn."]
+    "DESCRIPTIONS": ["Gain #b", " gold for each unblock damage dealt. Removed at end of turn or after #b.", "attacks."]
   },
 
   "soulessences:MitosisPower": {
     "NAME": "Mitosis",
-    "DESCRIPTIONS": ["Activates when at or under #b50% of your max HP.",
+    "DESCRIPTIONS": ["Activate when at or under #b50% of your max HP.",
       " When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."]
   },
 

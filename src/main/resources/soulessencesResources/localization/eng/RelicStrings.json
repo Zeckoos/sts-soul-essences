@@ -2,7 +2,8 @@
   "soulessences:GremlinNobSoul": {
     "NAME": "Gremlin Nob Soul",
     "FLAVOR": "You feel rage building up inside you.",
-    "DESCRIPTIONS": ["At the start of combat, gain #ysoulessences:Enraged."]
+    "DESCRIPTIONS": ["At the start of combat, gain #ysoulessences:Enraged.",
+    "ARGHHH!!!"]
   },
 
   "soulessences:SentrySoul": {

@@ -27,6 +27,8 @@ public class ChargingPower extends AbstractPower {
 
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    private static final String SPEECH_TEXT = powerStrings.DESCRIPTIONS[5];
+
     private static final Texture hiDefImage = TextureLoader.getTexture(PathManager.makePowerPath84("Charging.png"));
 
     private static final Texture normalImage = TextureLoader.getTexture(PathManager.makePowerPath32("Charging.png"));
@@ -62,7 +64,7 @@ public class ChargingPower extends AbstractPower {
             else {
                 CURRENT_TURN = 0;
 
-                AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "Here it comes!", true));
+                AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, SPEECH_TEXT, true));
 
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(DAMAGE_AMOUNT, true),
                         DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

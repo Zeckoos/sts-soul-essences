@@ -21,6 +21,8 @@ public class GremlinNobSoul extends BaseRelic {
 
     private static final String[] ENEMY_ID = {"GremlinNob", "FF_GremlinNob"};
 
+    private final String START_SPEECH = this.DESCRIPTIONS[1];
+
     public GremlinNobSoul() {
         super(ID, RARITY, SOUND, ENEMY_ID);
     }
@@ -31,7 +33,7 @@ public class GremlinNobSoul extends BaseRelic {
 
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.effectList.add(new SpeechBubble(p.dialogX,
-                p.dialogY,3.0F, "ARGHHH!!!", true));
+                p.dialogY,3.0F, START_SPEECH, true));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnragedPower(p, ENRAGE_AMOUNT), ENRAGE_AMOUNT));
         this.grayscale = true;

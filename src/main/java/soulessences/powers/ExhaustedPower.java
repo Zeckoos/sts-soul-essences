@@ -46,6 +46,10 @@ public class ExhaustedPower extends AbstractPower {
 
     private static final int MIN_ENERGY = 1;
 
+    private static final String START_SPEECH = DESCRIPTIONS[3];
+
+    private static final String END_SPEECH = DESCRIPTIONS[4];
+
     public ExhaustedPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -61,7 +65,7 @@ public class ExhaustedPower extends AbstractPower {
 
     @Override
     public void onInitialApplication() {
-        AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "My body is exhausted...", true));
+        AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, START_SPEECH, true));
 
         maxEnergy = AbstractDungeon.player.energy.energy; // Set player's max energy
         setEnergyToMin();
@@ -100,7 +104,7 @@ public class ExhaustedPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             if (this.amount == 1) {
-                AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, "Feel my power!", true));
+                AbstractDungeon.effectList.add(new SpeechBubble(this.owner.dialogX, this.owner.dialogY, 3.0F, END_SPEECH, true));
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
 
                 applyBuffs();

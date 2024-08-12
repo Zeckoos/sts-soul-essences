@@ -2,17 +2,26 @@ package soulessences.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
 
+import static soulessences.SoulEssences.makeID;
+
 public class EnragedAction extends AbstractGameAction {
+    private static final String ID = makeID("EnragedPower");
+
     private final int STR_INCREASE;
 
-    private static final int DEX_LOSS = 3; // Constant for dexterity loss
+    private static final int DEX_LOSS = 1; // Constant for dexterity loss
 
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
+
+    private static final String SPEECH = powerStrings.DESCRIPTIONS[3];
 
     public EnragedAction(int str) {
         this.duration = 0.0F;
@@ -40,7 +49,7 @@ public class EnragedAction extends AbstractGameAction {
 
         if (shouldApplyStrength) {
             AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX,
-                    AbstractDungeon.player.dialogY,3.0F, "FIGHT ME!!!", true));
+                    AbstractDungeon.player.dialogY,3.0F, SPEECH, true));
 
             // Apply Strength increase
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,

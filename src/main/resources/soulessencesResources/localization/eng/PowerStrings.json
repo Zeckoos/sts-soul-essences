@@ -2,8 +2,8 @@
   "soulessences:ExhaustedPower": {
     "NAME": "Exhausted",
     "DESCRIPTIONS": [
-      "Gain #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies."
-    ]
+      "Gain #b", "% of your max HP as #yBlock, set your base [E] to #b",". NL Effects that add [E] will still applies.",
+      "My body is exhausted...", "Feel my power!"]
   },
 
   "soulessences:AngryPower": {
@@ -13,12 +13,14 @@
 
   "soulessences:ChargingPower": {
     "NAME": "Charging",
-    "DESCRIPTIONS": ["Deal #b", " damage at the end of your turn after #b", " turns.", " NL Current turn: #b", "."]
+    "DESCRIPTIONS": ["Deal #b", " damage at the end of your turn after #b", " turns.", " NL Current turn: #b", ".",
+      "Here it comes!"]
   },
 
   "soulessences:EnragedPower": {
     "NAME": "Enraged",
-    "DESCRIPTIONS": ["Gain #b", " #yStrength and Lose #b", " #yDexterity if any of the enemies does not intent to attack."]
+    "DESCRIPTIONS": ["Gain #b", " #yStrength and Lose #b", " #yDexterity if any of the enemies does not intent to attack.",
+    "FIGHT ME!!!"]
   },
 
   "soulessences:ThieveryPower": {
@@ -28,8 +30,7 @@
 
   "soulessences:MitosisPower": {
     "NAME": "Mitosis",
-    "DESCRIPTIONS": ["Activate when at or under #b50% of your max HP.",
-      " When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."]
+    "DESCRIPTIONS": ["Activate when at or under #b50% of your max HP.", " When taking unblocked damage, #ySummon a #bSlime #bMinion to help you."]
   },
 
   "soulessences:ModeshiftPower": {

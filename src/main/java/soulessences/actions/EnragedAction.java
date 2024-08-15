@@ -17,7 +17,7 @@ public class EnragedAction extends AbstractGameAction {
 
     private final int STR_INCREASE;
 
-    private static final int DEX_LOSS = 1; // Constant for dexterity loss
+    private static final int DEX_LOSS = 2; // Constant for dexterity loss
 
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
 

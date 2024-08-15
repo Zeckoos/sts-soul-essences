@@ -19,8 +19,6 @@ public class WatcherSoul extends BaseRelic implements ClickableRelic {
 
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    private static final int MAX_TURN = 2;
-
     private static final int CARD_AMOUNT = 1;
 
     public WatcherSoul() {
@@ -60,13 +58,13 @@ public class WatcherSoul extends BaseRelic implements ClickableRelic {
         this.tips.clear();
         this.description = getUpdatedDescription();
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(BaseMod.getKeywordTitle(this.DESCRIPTIONS[3]), BaseMod.getKeywordDescription(this.DESCRIPTIONS[3])));
+        this.tips.add(new PowerTip(BaseMod.getKeywordTitle(this.DESCRIPTIONS[2]), BaseMod.getKeywordDescription(this.DESCRIPTIONS[2])));
         initializeTips();
     }
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + MAX_TURN + DESCRIPTIONS[1] + CARD_AMOUNT + DESCRIPTIONS[2];
+        return DESCRIPTIONS[0] + CARD_AMOUNT + DESCRIPTIONS[1];
     }
 
     @Override

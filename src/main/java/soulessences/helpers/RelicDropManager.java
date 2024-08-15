@@ -3,9 +3,7 @@ package soulessences.helpers;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import soulessences.relics.bosses.HexaghostSoul;
-import soulessences.relics.bosses.SlimeBossSoul;
-import soulessences.relics.bosses.TheGuardianSoul;
+import soulessences.relics.bosses.*;
 import soulessences.relics.elites.*;
 
 import java.util.HashMap;
@@ -32,6 +30,9 @@ public class RelicDropManager {
         monsterRelicMap.put("SlimeBoss", SlimeBossSoul.class);
         monsterRelicMap.put("TheGuardian", TheGuardianSoul.class);
         monsterRelicMap.put("Hexaghost", HexaghostSoul.class);
+        monsterRelicMap.put("BronzeAutomaton", BronzeAutomatonSoul.class);
+        monsterRelicMap.put("Champ", TheChampSoul.class);
+        monsterRelicMap.put("TheCollector", TheCollectorSoul.class);
     }
 
     public static void tryDropRelic(AbstractMonster monster) {

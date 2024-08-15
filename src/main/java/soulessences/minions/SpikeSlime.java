@@ -2,18 +2,29 @@ package soulessences.minions;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import soulessences.SoulEssences;
+import soulessences.utils.MinionStrings;
 import soulessences.utils.PathManager;
 
 import static soulessences.SoulEssences.makeID;
 
-public class SpikeSlime extends BaseSlime {
+public class SpikeSlime extends BaseMinionAnimation {
     private static final String ID = makeID("SpikeSlime");
-    private static final String NAME = "Spike Slime";
+
+    private static final MinionStrings minionStrings = SoulEssences.getMinionString(ID);
+
+    public static final String NAME = minionStrings.NAME;
+
+    public static final String[] DESCRIPTIONS = minionStrings.DESCRIPTION;
+
     private static final String ATLAS_PATH = PathManager.makeMinionsAnimationPath("slimeAltS/skeleton.atlas");
+
     private static final String SKELETON_PATH = PathManager.makeMinionsAnimationPath("slimeAltS/skeleton.json");
+
     private static final float SCALE = 1.0f;
 
     public SpikeSlime() {
@@ -44,10 +55,14 @@ public class SpikeSlime extends BaseSlime {
     }
 
     @Override
+    public void playChannelSFX() {
+        CardCrawlGame.sound.play("MONSTER_SLIME_ATTACK", 0.1F);
+    }
+
+    @Override
     public void updateDescription() {
-        this.description = String.format("#yPassive: Grants %d #yPlated Armor to the player at the end of each turn. " +
-                        "NL #yEvoke: Grants %d Plated Armor.",
-                this.passiveAmount, this.evokeAmount);
+        this.description = String.format(DESCRIPTIONS[0], this.passiveAmount) +
+                String.format(DESCRIPTIONS[1], this.evokeAmount);
     }
 
     @Override

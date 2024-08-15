@@ -7,6 +7,10 @@ public class PathManager {
         return modID + "Resources/images/" + resourcePath;
     }
 
+    public static String makeLocalizationPath(String lang, String resourcePath) {
+        return modID + "Resources/localization/" + lang + "/" + resourcePath;
+    }
+
     public static String makeRelicPath(String resourcePath) {
         return makeImagePath("relics/") + resourcePath;
     }

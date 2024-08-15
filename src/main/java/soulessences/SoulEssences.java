@@ -2,6 +2,7 @@ package soulessences;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -9,6 +10,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -17,11 +19,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import soulessences.helpers.RelicDropManager;
 import soulessences.relics.BaseRelic;
+import soulessences.relics.bosses.TheCollectorSoul;
+import soulessences.utils.MinionStrings;
+import soulessences.utils.NeowRewardStrings;
+import soulessences.utils.PathManager;
 
+import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpireInitializer
-public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostDungeonInitializeSubscriber {
+public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostDungeonInitializeSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(SoulEssences.class.getName());
 
     public static final String modID = "soulessences";
@@ -29,6 +38,10 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
+
+    private static Map<String, MinionStrings> minionStringsMap = new HashMap<>();
+
+    private static Map<String, NeowRewardStrings> neowRewardStringsMap = new HashMap<>();
 
     public SoulEssences() {
         logger.info("Subscribe to BaseMod hooks");
@@ -62,6 +75,42 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
                 });
     }
 
+    public static MinionStrings getMinionString(String id) {
+        return minionStringsMap.getOrDefault(id, new MinionStrings());
+    }
+
+    public static NeowRewardStrings getNeowRewardString(String id) {
+        return neowRewardStringsMap.getOrDefault(id, new NeowRewardStrings());
+    }
+
+    private void loadMinionStrings(String lang) {
+        String minionStringsPath = PathManager.makeLocalizationPath(lang, "/MinionStrings.json");
+        Type type = new TypeToken<Map<String, MinionStrings>>() {}.getType();
+        Gson gson = new Gson();
+        String json = Gdx.files.internal(minionStringsPath).readString(String.valueOf(StandardCharsets.UTF_8));
+        Map<String, MinionStrings> minionStrings = gson.fromJson(json, type);
+
+        if (minionStrings != null) {
+            minionStringsMap.putAll(minionStrings);
+        }
+
+        logger.info("Minion strings loaded from {}", minionStringsPath);
+    }
+
+    private void loadNeowRewardStrings(String lang) {
+        String neowRewardStringsPath = PathManager.makeLocalizationPath(lang, "/NeowRewardStrings.json");
+        Type type = new TypeToken<Map<String, NeowRewardStrings>>() {}.getType();
+        Gson gson = new Gson();
+        String json = Gdx.files.internal(neowRewardStringsPath).readString(String.valueOf(StandardCharsets.UTF_8));
+        Map<String, NeowRewardStrings> neowStrings = gson.fromJson(json, type);
+
+        if (neowStrings != null) {
+            neowRewardStringsMap.putAll(neowStrings);
+        }
+
+        logger.info("NeowReward strings loaded from {}", neowRewardStringsPath);
+    }
+
     private static String getLangString() {
         return Settings.language.name().toLowerCase();
     }
@@ -71,22 +120,41 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
     public void receiveEditStrings() {
         loadLocalization(defaultLanguage);
 
-        if (!defaultLanguage.equals(getLangString()))
+        // Load minion strings
+        loadMinionStrings(defaultLanguage);
+        if (!defaultLanguage.equals(getLangString())) {
             try {
-                loadLocalization(getLangString());
-            }
-
-            catch (GdxRuntimeException e) {
+                loadMinionStrings(getLangString());
+            } catch (GdxRuntimeException e) {
                 e.printStackTrace();
             }
+        }
+
+        // Load neow reward strings
+        loadNeowRewardStrings(defaultLanguage);
+        if (!defaultLanguage.equals(getLangString())) {
+            try {
+                loadNeowRewardStrings(getLangString());
+            } catch (GdxRuntimeException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (!defaultLanguage.equals(getLangString())) {
+            try {
+                loadLocalization(getLangString());
+            } catch (GdxRuntimeException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void loadLocalization(String lang) {
-        String relicPath = modID + "Resources/localization/" + lang + "/RelicStrings.json";
+        String relicPath = PathManager.makeLocalizationPath(lang, "RelicStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, relicPath);
         logger.info("Relic strings loaded from {}", relicPath);
 
-        String powerPath = modID + "Resources/localization/" + lang + "/PowerStrings.json";
+        String powerPath = PathManager.makeLocalizationPath(lang, "/PowerStrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, powerPath);
         logger.info("Power strings loaded from {}", powerPath);
     }
@@ -113,5 +181,23 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
     @Override
     public void receivePostDungeonInitialize() {
         RelicDropManager.resetDropState();
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        // Register the save field for TheCollectorSoul after the game has been initialized
+        BaseMod.addSaveField(TheCollectorSoul.ID, new CustomSavable<Object>() {
+            @Override
+            public Object onSave() {
+                return TheCollectorSoul.getTotalTempHp();
+            }
+
+            @Override
+            public void onLoad(Object savedData) {
+                if (savedData instanceof Integer) {
+                    TheCollectorSoul.setTempHp((Integer) savedData);
+                }
+            }
+        });
     }
 }

@@ -96,6 +96,24 @@
     "DESCRIPTIONS": ["At the start of combat, apply #ysoulessences:Shadowburn #b", " times to random enemies and shuffle #b", " #yBurn to the top of your deck."]
   },
 
+  "soulessences:BronzeAutomatonSoul": {
+    "NAME": "Bronze Automaton Soul",
+    "FLAVOR": "You gain the ability to control a bronze orb.",
+    "DESCRIPTIONS": ["At the start of each turn, put a card in your #yDiscard pile into your #yHand. NL Pulled Card: ", "."]
+  },
+
+  "soulessences:TheChampSoul": {
+    "NAME": "The Champ Soul",
+    "FLAVOR": "You are now the CHAMPION!",
+    "DESCRIPTIONS": ["The cost (X) & type of the first card played each turn will provide different effects. NL -Power = X #yStrength NL -Skill = X #yMetallicize NL -Attack = X #yVulnerable to ALL enemies."]
+  },
+
+  "soulessences:TheCollectorSoul": {
+    "NAME": "The Collector Soul",
+    "FLAVOR": "He, who collects is no more.",
+    "DESCRIPTIONS": ["At the start of combat, gain the same amount of #yTemp #yHP as the monsters you've killed.", "Another one for my collection...", "Your death shall be my rise."]
+  },
+
   "soulessences:IroncladSoul": {
     "NAME": "Ironclad Soul",
     "FLAVOR": "One of many Ironclads, fallen but not gone.",
@@ -117,6 +135,6 @@
   "soulessences:WatcherSoul": {
     "NAME": "Watcher Soul",
     "FLAVOR": "A blind ascetic who has come to \"Evaluate\" the Spire.",
-    "DESCRIPTIONS": ["Every #b", " turns, right click to activate this relic. Add #b", " #yEthereal #ySmite and #ySafety to your hand.", "soulessences:Bento_Baker_Praymordis"]
+    "DESCRIPTIONS": ["Every #yEven turn, right click to activate this relic. Add #b", " #yEthereal #ySmite and #ySafety to your hand.", "soulessences:Bento_Baker_Praymordis"]
   }
 }

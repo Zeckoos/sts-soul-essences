@@ -1,0 +1,17 @@
+{
+  "soulessences:AcidSlime": {
+    "NAME": "Acid Slime",
+    "DESCRIPTION": [
+      "#yPassive: Applies %d #yPoison to a random enemy at the end of each turn. ",
+      "NL #yEvoke: Applies %d #yPoison to a random enemy."
+    ]
+  },
+
+  "soulessences:SpikeSlime": {
+    "NAME": "Spike Slime",
+    "DESCRIPTION": [
+      "#yPassive: Grants %d #yPlated Armor to the player at the end of each turn. ",
+      "NL #yEvoke: Grants %d #yPlated Armor."
+    ]
+  }
+}

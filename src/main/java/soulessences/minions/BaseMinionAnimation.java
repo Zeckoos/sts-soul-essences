@@ -17,13 +17,13 @@ import com.megacrit.cardcrawl.powers.FocusPower;
 
 import java.util.ArrayList;
 
-public abstract class BaseSlime extends AbstractOrb {
+public abstract class BaseMinionAnimation extends AbstractOrb {
     protected Skeleton skeleton;
     protected AnimationState state;
     private static final SkeletonMeshRenderer sr = new SkeletonMeshRenderer();
     private final TextureAtlas atlas;
 
-    public BaseSlime(String id, String name, String atlasPath, String skeletonPath, float scale) {
+    public BaseMinionAnimation(String id, String name, String atlasPath, String skeletonPath, float scale) {
         this.ID = id;
         this.name = name;
         this.atlas = new TextureAtlas(atlasPath);
@@ -97,7 +97,6 @@ public abstract class BaseSlime extends AbstractOrb {
 
     @Override
     public void playChannelSFX() {
-        CardCrawlGame.sound.play("MONSTER_SLIME_ATTACK", 0.1F);
     }
 
     @Override

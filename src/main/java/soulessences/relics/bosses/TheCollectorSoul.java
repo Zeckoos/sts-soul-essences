@@ -1,5 +1,7 @@
 package soulessences.relics.bosses;
 
+import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +16,7 @@ import java.util.List;
 
 import static soulessences.SoulEssences.makeID;
 
-public class TheCollectorSoul extends BaseRelic {
+public class TheCollectorSoul extends BaseRelic implements CustomSavable<Integer> {
     public static final String ID = makeID("TheCollectorSoul");
 
     private static final RelicTier RARITY = RelicTier.BOSS;
@@ -70,16 +72,22 @@ public class TheCollectorSoul extends BaseRelic {
         this.updateCounter();
     }
 
-    public static int getTotalTempHp() {
-        return TOTAL_TEMP_HP;
-    }
-
-    public static void setTempHp(int tempHp) {
-        TOTAL_TEMP_HP = tempHp;
-    }
-
     @Override
     public AbstractRelic makeCopy() {
         return new TheCollectorSoul();
+    }
+
+    @Override
+    public Integer onSave() {
+        return TOTAL_TEMP_HP;
+    }
+
+    @Override
+    public void onLoad(Integer loadedValue) {
+        if (loadedValue != null) {
+            TOTAL_TEMP_HP = loadedValue;  // Restore TOTAL_TEMP_HP from saved value
+
+            this.updateCounter();
+        }
     }
 }

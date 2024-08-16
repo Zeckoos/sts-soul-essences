@@ -10,16 +10,12 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
 
-import static soulessences.SoulEssences.makeID;
-
 public class EnragedAction extends AbstractGameAction {
-    private static final String ID = makeID("EnragedPower");
-
     private final int STR_INCREASE;
 
     private static final int DEX_LOSS = 2; // Constant for dexterity loss
 
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(ID);
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("soulessences:EnragedPower");
 
     private static final String SPEECH = powerStrings.DESCRIPTIONS[3];
 

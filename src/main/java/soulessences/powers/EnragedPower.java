@@ -35,12 +35,15 @@ public class EnragedPower extends AbstractPower {
         this.type = PowerType.BUFF;
         region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
         region48 = new TextureAtlas.AtlasRegion(normalImage, 0, 0, normalImage.getWidth(), normalImage.getHeight());
+
         this.updateDescription();
     }
 
     @Override
     public void onInitialApplication() {
-        atStartOfTurn();
+        this.flash();
+
+        this.addToBot(new EnragedAction(STR_DEX_AMOUNT));
     }
 
     @Override

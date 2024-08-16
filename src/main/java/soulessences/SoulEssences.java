@@ -2,7 +2,6 @@ package soulessences;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
-import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -185,19 +184,6 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
 
     @Override
     public void receivePostInitialize() {
-        // Register the save field for TheCollectorSoul after the game has been initialized
-        BaseMod.addSaveField(TheCollectorSoul.ID, new CustomSavable<Object>() {
-            @Override
-            public Object onSave() {
-                return TheCollectorSoul.getTotalTempHp();
-            }
-
-            @Override
-            public void onLoad(Object savedData) {
-                if (savedData instanceof Integer) {
-                    TheCollectorSoul.setTempHp((Integer) savedData);
-                }
-            }
-        });
+        BaseMod.addSaveField(TheCollectorSoul.ID, new TheCollectorSoul());
     }
 }

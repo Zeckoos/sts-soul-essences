@@ -28,7 +28,7 @@
     "NAMES": [
       "enraged"
     ],
-    "DESCRIPTION": "Gain #b1 #yStrength and Lose #b1 #yDexterity if any of the enemies does not intent to attack."
+    "DESCRIPTION": "Gain #b2 #yStrength and Lose #b2 #yDexterity if any of the enemies does not intent to attack."
   },
 
   {

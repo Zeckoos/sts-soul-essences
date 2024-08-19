@@ -1,6 +1,5 @@
 package soulessences.relics.bosses;
 
-import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import soulessences.relics.BaseRelic;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

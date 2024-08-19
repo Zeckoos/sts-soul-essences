@@ -99,7 +99,7 @@
   "soulessences:BronzeAutomatonSoul": {
     "NAME": "Bronze Automaton Soul",
     "FLAVOR": "You gain the ability to control a bronze orb.",
-    "DESCRIPTIONS": ["At the start of each turn, put a card in your #yDiscard pile into your #yHand. NL Pulled Card: ", "."]
+    "DESCRIPTIONS": ["At the start of each turn, put a random card in your #yDiscard pile into your #yHand. NL Pulled Card: ", "."]
   },
 
   "soulessences:TheChampSoul": {

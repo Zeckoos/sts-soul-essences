@@ -121,31 +121,31 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
 
         // Load minion strings
         loadMinionStrings(defaultLanguage);
-        if (!defaultLanguage.equals(getLangString())) {
-            try {
-                loadMinionStrings(getLangString());
-            } catch (GdxRuntimeException e) {
-                e.printStackTrace();
-            }
-        }
-
-        // Load neow reward strings
+//       if (!defaultLanguage.equals(getLangString())) {
+//           try {
+//               loadMinionStrings(getLangString());
+//           } catch (GdxRuntimeException e) {
+//               e.printStackTrace();
+//           }
+//       }
+//
+          // Load neow reward strings
         loadNeowRewardStrings(defaultLanguage);
-        if (!defaultLanguage.equals(getLangString())) {
-            try {
-                loadNeowRewardStrings(getLangString());
-            } catch (GdxRuntimeException e) {
-                e.printStackTrace();
-            }
-        }
+//        if (!defaultLanguage.equals(getLangString())) {
+//            try {
+//                loadNeowRewardStrings(getLangString());
+//            } catch (GdxRuntimeException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
-        if (!defaultLanguage.equals(getLangString())) {
-            try {
-                loadLocalization(getLangString());
-            } catch (GdxRuntimeException e) {
-                e.printStackTrace();
-            }
-        }
+//        if (!defaultLanguage.equals(getLangString())) {
+//            try {
+//                loadLocalization(getLangString());
+//            } catch (GdxRuntimeException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     private void loadLocalization(String lang) {

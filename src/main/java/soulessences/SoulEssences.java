@@ -9,7 +9,9 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -27,7 +29,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpireInitializer
-public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, PostDungeonInitializeSubscriber, PostInitializeSubscriber {
+public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber,
+        EditKeywordsSubscriber, PostDungeonInitializeSubscriber, PostInitializeSubscriber,
+        EditCardsSubscriber {
     public static final Logger logger = LogManager.getLogger(SoulEssences.class.getName());
 
     public static final String modID = "soulessences";
@@ -72,6 +76,16 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
                 });
     }
 
+    @Override
+    public void receiveEditCards() {
+        // Automatically add all cards in the soulessences.cards package
+        new AutoAdd(modID)
+                .packageFilter(AbstractCard.class)
+                .any(AbstractCard.class, (info, card) -> BaseMod.addCard(card));
+
+        logger.info("Cards registered.");
+    }
+
     public static MinionStrings getMinionString(String id) {
         return minionStringsMap.getOrDefault(id, new MinionStrings());
     }
@@ -108,6 +122,12 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
         logger.info("NeowReward strings loaded from {}", neowRewardStringsPath);
     }
 
+    private void loadCardStrings(String lang) {
+        String cardStringsPath = PathManager.makeLocalizationPath(lang, "/CardStrings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, cardStringsPath);
+        logger.info("Card strings loaded from {}", cardStringsPath);
+    }
+
     private static String getLangString() {
         return Settings.language.name().toLowerCase();
     }
@@ -123,12 +143,14 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
             loadLocalization(userLanguage);
             loadMinionStrings(userLanguage);
             loadNeowRewardStrings(userLanguage);
+            loadCardStrings(userLanguage);
             logger.info("Loaded localization for language: {}", userLanguage);
         }
         else {
             loadLocalization(defaultLanguage);
             loadMinionStrings(defaultLanguage);
             loadNeowRewardStrings(defaultLanguage);
+            loadCardStrings(defaultLanguage);
             logger.info("User language localization not found. Loaded default localization: " + defaultLanguage);
         }
     }

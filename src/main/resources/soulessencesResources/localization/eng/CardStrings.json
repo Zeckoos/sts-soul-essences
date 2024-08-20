@@ -1,0 +1,12 @@
+{
+  "soulessences:ModdedSmite": {
+    "NAME": "Smite",
+    "DESCRIPTION": "Deal !D! damage. NL Ethereal. NL Retain. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D!+4 damage. NL Ethereal. NL Retain. NL Exhaust."
+  },
+  "soulessences:ModdedSafety": {
+    "NAME": "Safety",
+    "DESCRIPTION": "Gain !B! Block. NL Ethereal. NL Retain. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B!+4 Block. NL Ethereal. NL Retain. NL Exhaust."
+  }
+}

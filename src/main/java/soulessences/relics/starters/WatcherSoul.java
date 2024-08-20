@@ -3,11 +3,12 @@ package soulessences.relics.starters;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.tempCards.Safety;
-import com.megacrit.cardcrawl.cards.tempCards.Smite;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import soulessences.cards.ModdedSafety;
+import soulessences.cards.ModdedSmite;
 import soulessences.relics.BaseRelic;
 
 import static soulessences.SoulEssences.makeID;
@@ -37,8 +38,13 @@ public class WatcherSoul extends BaseRelic implements ClickableRelic {
         if (this.counter % 2 == 0) {
             this.flash();
 
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Smite(), true));
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Safety(), true));
+            // Create the custom ModdedSmite and ModdedSafety cards
+            AbstractCard smite = new ModdedSmite();
+            AbstractCard safety = new ModdedSafety();
+
+            // Add the ethereal cards to the player's hand
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(smite, true));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(safety, true));
 
             this.counter = 0;
         }

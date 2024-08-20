@@ -1,0 +1,12 @@
+{
+	"soulessences:ModdedSmite": {
+		"NAME": "惩恶",
+		"DESCRIPTION": " 虚无 保留 。 NL 造成 !D! 点伤害。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": " 虚无 保留 。 NL 造成 !D!+4 点伤害。 NL 消耗 。"
+	},
+	"soulessences:ModdedSafety": {
+		"NAME": "平安",
+		"DESCRIPTION": " 虚无 保留 。 NL 获得 !B! 点 格挡 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": " 虚无 保留 。 NL 获得 !B!+4 点 格挡 。 NL 消耗 。"
+	}
+}

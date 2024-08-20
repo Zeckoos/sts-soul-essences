@@ -5,7 +5,6 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -22,7 +21,6 @@ import soulessences.relics.bosses.TheCollectorSoul;
 import soulessences.utils.MinionStrings;
 import soulessences.utils.NeowRewardStrings;
 import soulessences.utils.PathManager;
-
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -117,35 +115,22 @@ public class SoulEssences implements EditRelicsSubscriber, EditStringsSubscriber
     private static final String defaultLanguage = "eng";
 
     public void receiveEditStrings() {
-        loadLocalization(defaultLanguage);
+        String userLanguage = getLangString();
 
-        // Load minion strings
-        loadMinionStrings(defaultLanguage);
-//       if (!defaultLanguage.equals(getLangString())) {
-//           try {
-//               loadMinionStrings(getLangString());
-//           } catch (GdxRuntimeException e) {
-//               e.printStackTrace();
-//           }
-//       }
-//
-          // Load neow reward strings
-        loadNeowRewardStrings(defaultLanguage);
-//        if (!defaultLanguage.equals(getLangString())) {
-//            try {
-//                loadNeowRewardStrings(getLangString());
-//            } catch (GdxRuntimeException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        boolean userLangExists = Gdx.files.internal(PathManager.makeLocalizationPath(userLanguage, "")).exists();
 
-//        if (!defaultLanguage.equals(getLangString())) {
-//            try {
-//                loadLocalization(getLangString());
-//            } catch (GdxRuntimeException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        if (userLangExists) {
+            loadLocalization(userLanguage);
+            loadMinionStrings(userLanguage);
+            loadNeowRewardStrings(userLanguage);
+            logger.info("Loaded localization for language: {}", userLanguage);
+        }
+        else {
+            loadLocalization(defaultLanguage);
+            loadMinionStrings(defaultLanguage);
+            loadNeowRewardStrings(defaultLanguage);
+            logger.info("User language localization not found. Loaded default localization: " + defaultLanguage);
+        }
     }
 
     private void loadLocalization(String lang) {

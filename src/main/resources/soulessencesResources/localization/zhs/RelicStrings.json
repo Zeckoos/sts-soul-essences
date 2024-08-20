@@ -1,0 +1,202 @@
+{
+	"soulessences:GremlinNobSoul": {
+		"NAME": "地精大块头的灵魂",
+		"FLAVOR": "你感到愤怒在你内心积聚。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 获得 #ysoulEssences:激怒 。",
+			"啊嗷嗷呜嗷！！"
+		]
+	},
+
+	"soulessences:SentrySoul": {
+		"NAME": "哨卫的灵魂",
+		"FLAVOR": "你对这些机器人为何拥有灵魂感到十分困惑……",
+		"DESCRIPTIONS": ["每 #b", " 回合， 额外抽 #b", " 张牌。"]
+	},
+
+	"soulessences:LagavulinSoul": {
+		"NAME": "乐加维林的灵魂",
+		"FLAVOR": "你感觉力量在增长，身体在变硬。但与此同时，你感觉自己的行动受到了限制。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 获得 #b",
+			" 层 #ysoulEssences:筋疲力尽 。 NL 效果结束时获得 #b",
+			" 层 #y金属化 、 #b",
+			" 点 #y力量 与 #y敏捷 "
+		]
+	},
+
+	"soulessences:BookOfStabbingSoul": {
+		"NAME": "扎人的书的灵魂",
+		"FLAVOR": "你觉得有点痴迷于刺伤。",
+		"DESCRIPTIONS": [
+			"每回合打出的第一张 #y攻击牌 有 #y85% 几率 将被打出三次。"
+		]
+	},
+
+	"soulessences:GremlinLeaderSoul": {
+		"NAME": "地精首领的灵魂",
+		"FLAVOR": "剩下的小地精开始跟着你。",
+		"DESCRIPTIONS": [
+			"每 #b",
+			" 回合， 收到来自小地精的 #b",
+			" 个随机效果。"
+		]
+	},
+
+	"soulessences:TaskMasterSoul": {
+		"NAME": "奴隶头子的灵魂",
+		"FLAVOR": "你对某些敌人有点 ████ 。",
+		"DESCRIPTIONS": [
+			"每 #b",
+			" 回合， 给予所有敌人 #b",
+			" 层 #y虚弱 和 #y易伤 。"
+		]
+	},
+
+	"soulessences:GiantHeadSoul": {
+		"NAME": "大脑袋的灵魂",
+		"FLAVOR": "你的头感觉有点重。",
+		"DESCRIPTIONS": ["战斗开始时， 给予所有敌人 #y缓慢 。"]
+	},
+
+	"soulessences:NemesisSoul": {
+		"NAME": "天罚的灵魂",
+		"FLAVOR": "你虽感死神悄然而至，却无惧直面其幽影。",
+		"DESCRIPTIONS": [
+			"获得 #b",
+			" 层 #y无实体 , 每 #b",
+			" 回合 。 NL (每场战斗最多 #b",
+			" 次)"
+		]
+	},
+
+	"soulessences:ReptomancerSoul": {
+		"NAME": "拜蛇术士的灵魂",
+		"FLAVOR": "你获得了召唤毒匕首的能力。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 将 #b",
+			" 张 #b",
+			" 费 的 #y带毒刺击 #y洗入 你的抽牌堆。"
+		]
+	},
+
+	"soulessences:BottledThievesSoul": {
+		"NAME": "瓶装盗贼的灵魂",
+		"FLAVOR": "谁不喜欢金子呢？？？",
+		"DESCRIPTIONS": ["战斗开始时， 获得 #b", " 层 #ysoulEssences:偷窃 。"]
+	},
+
+	"soulessences:BottledCultistSoul": {
+		"NAME": "瓶装邪教徒的灵魂",
+		"FLAVOR": "咔咔??",
+		"DESCRIPTIONS": ["战斗开始时， 获得 #b", " 层 #y仪式 。"]
+	},
+
+	"soulessences:BottledRedSlaverSoul": {
+		"NAME": "瓶装奴隶贩子(红)的灵魂",
+		"FLAVOR": "蓝色是我最喜欢的颜色。",
+		"DESCRIPTIONS": ["回合开始时， 给予所有敌人 #b", " 层 #y易伤 。"]
+	},
+
+	"soulessences:BottledBlueSlaverSoul": {
+		"NAME": "瓶装奴隶贩子(蓝)的灵魂",
+		"FLAVOR": "红色是我最喜欢的颜色。",
+		"DESCRIPTIONS": ["回合开始时， 给予所有敌人 #b", " 层 #y虚弱 。"]
+	},
+
+	"soulessences:SlimeBossSoul": {
+		"NAME": "史莱姆老大的灵魂",
+		"FLAVOR": "你获得了遇到危险时召唤粘液爪牙的能力。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 获得 #ysoulEssences:分裂 。",
+			"soulessences:崩坠"
+		]
+	},
+
+	"soulessences:TheGuardianSoul": {
+		"NAME": "守护者的灵魂",
+		"FLAVOR": "你的身体在受到伤害时会生长出尖刺。",
+		"DESCRIPTIONS": ["战斗开始时， 获得 #ysoulEssences:形态转换 。"]
+	},
+
+	"soulessences:HexaghostSoul": {
+		"NAME": "六火亡魂的灵魂",
+		"FLAVOR": "你感到一股来自鬼魂的力量在体内熊熊燃烧。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 随机给予敌人 #ysoulEssences:地狱火 #b",
+			" 层， 将 #b",
+			" 张 #y灼伤 #y洗入 你的抽牌堆。"
+		]
+	},
+
+	"soulessences:BronzeAutomatonSoul": {
+		"NAME": "铜制机械人偶的灵魂",
+		"FLAVOR": "你获得了控制铜球的能力。",
+		"DESCRIPTIONS": [
+			"回合开始时， 将 #y弃牌堆 中的一张牌放入你的 #y手牌 。 NL 抽取: #y",
+			" 。"
+		]
+	},
+
+	"soulessences:TheChampSoul": {
+		"NAME": "第一勇士的灵魂",
+		"FLAVOR": "你现在是冠军了！",
+		"DESCRIPTIONS": [
+			"每回合打出的第一张牌，将根据 #y类型 与 #y费用(X) 产生额外效果。 NL #y能力牌 : 获得 X 点 #y力量 NL #y技能牌 : 获得 X 层 #y金属化 NL #y攻击牌 : 给予所有敌人 X 层 #y易伤"
+		]
+	},
+
+	"soulessences:TheCollectorSoul": {
+		"NAME": "收藏家的灵魂",
+		"FLAVOR": "他，‌那位收藏家，‌已然不再。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 获得等同于你杀死怪物数量的 #y临时生命 。",
+			"我的有一个收藏……",
+			"你的死亡将是我的崛起。"
+		]
+	},
+
+	"soulessences:IroncladSoul": {
+		"NAME": "坚固的灵魂",
+		"FLAVOR": "铁甲军团残留下的士兵。 倒下了，但依然存在。",
+		"DESCRIPTIONS": [
+			"每当一个最大生命值超过你一半的敌人死亡时， 回复 #b",
+			" 点 生命 并 提升 #b",
+			" 点 最大生命值。",
+			"soulessences:本托·贝克·普雷蒙迪斯"
+		]
+	},
+
+	"soulessences:SilentSoul": {
+		"NAME": "静默的灵魂",
+		"FLAVOR": "来自雾霾之地的致命女猎手。",
+		"DESCRIPTIONS": [
+			"回合开始时， #y预见 #b",
+			" ，并抽 #b",
+			" 张卡。",
+			"soulessences:本托·贝克·普雷蒙迪斯"
+		]
+	},
+
+	"soulessences:DefectSoul": {
+		"NAME": "缺陷的灵魂",
+		"FLAVOR": "一具产生了自我意识的战斗型机器人，以某种方式获得了灵魂。",
+		"DESCRIPTIONS": [
+			"战斗开始时， 获得 #b",
+			" 个充能球栏位 ， #b",
+			" 层 散热片 并 #y生成 #b",
+			" 个 等离子充能球 。",
+			"soulessences:本托·贝克·普雷蒙迪斯"
+		]
+	},
+
+	"soulessences:WatcherSoul": {
+		"NAME": "观察的灵魂",
+		"FLAVOR": "一名目盲的修行者，前来“评估”高塔。 ",
+		"DESCRIPTIONS": [
+			"每回合一次，右键单击该遗物: 将 #y虚无 、 #y惩恶 和 #y平安 各 #b",
+			" 张 置入到你的手牌。",
+			"soulessences:本托·贝克·普雷蒙迪斯"
+		]
+	}
+}

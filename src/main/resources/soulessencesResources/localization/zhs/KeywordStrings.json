@@ -1,0 +1,61 @@
+[
+	{
+		"PROPER_NAME": "筋疲力尽",
+		"NAMES": ["筋疲力尽", "Exhausted", "exhausted"],
+		"DESCRIPTION": "获得最大生命值 #b15% 的 #y黑血 ，基础 [E] 变为 #b1 。 NL 添加 [E] 的效果仍然有效。"
+	},
+
+	{
+		"PROPER_NAME": "生气",
+		"NAMES": ["生气", "Angry", "angry"],
+		"DESCRIPTION": "每当受到 #y攻击 伤害，获得 #b2 点 #y力量 。"
+	},
+
+	{
+		"PROPER_NAME": "蓄能",
+		"NAMES": ["蓄能", "Charging", "charging"],
+		"DESCRIPTION": "在 #b3 回合后，造成 #b30 点伤害。"
+	},
+
+	{
+		"PROPER_NAME": "激怒",
+		"NAMES": ["激怒", "Enraged", "enraged"],
+		"DESCRIPTION": "如果没有敌人意图 #y攻击 ，则获得 #b2 点 #y力量 并失去 #b2 点 #y敏捷 。"
+	},
+
+	{
+		"PROPER_NAME": "分裂",
+		"NAMES": ["分裂", "Mitosis", "mitosis"],
+		"DESCRIPTION": "当生命值不高于 #b50% 时激活。 NL 每当承受伤害时， #y召唤 一个 #b史莱姆爪牙 来帮助你。"
+	},
+
+	{
+		"PROPER_NAME": "形态转换",
+		"NAMES": ["形态转换", "Modeshift", "modeshift"],
+		"DESCRIPTION": "当承受的总伤害超过 #b阈值 后, 获得 #b12 层 #y荆棘 。"
+	},
+
+	{
+		"PROPER_NAME": "地狱火",
+		"NAMES": ["地狱火", "Shadowburn", "shadowburn"],
+		"DESCRIPTION": "伤害为 #b(H+1) X #b3 。 NL #bH 为怪物当前的生命值除以 #b12 (四舍五入)。"
+	},
+
+	{
+		"PROPER_NAME": "偷窃",
+		"NAMES": ["偷窃", "Thievery", "thievery"],
+		"DESCRIPTION": "每当你造成未被格挡的 #y攻击 伤害， 获得 #b15 金币。"
+	},
+
+	{
+		"PROPER_NAME": "崩坠",
+		"NAMES": ["崩坠", "Downfall", "downfall"],
+		"DESCRIPTION": "灵感来自《 #b崩坠 》模组中的 #b史莱姆老大 。"
+	},
+
+	{
+		"PROPER_NAME": "本托·贝克·普雷蒙迪斯",
+		"NAMES": ["本托·贝克·普雷蒙迪斯", "Bento_Baker_Praymordis"],
+		"DESCRIPTION": "灵感来自 #b本托·贝克·普雷蒙迪斯 。"
+	}
+]

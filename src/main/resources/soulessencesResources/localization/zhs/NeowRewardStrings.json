@@ -1,0 +1,6 @@
+{
+	"soulessences:NeowRewardLoseStarterGainSoul": {
+		"NAME": "失去你的初始遗物， 获得一个随机角色的灵魂遗物。",
+		"DESCRIPTION": "{R}失去你的初始遗物{END}， {G}获得一个随机角色的灵魂遗物{END}。"
+	}
+}

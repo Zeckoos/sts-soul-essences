@@ -1,0 +1,66 @@
+{
+	"soulessences:ExhaustedPower": {
+		"NAME": "筋疲力尽",
+		"DESCRIPTIONS": [
+			"在你的回合开始时获得最大生命值 #b",
+			"% 的#y格挡， [E] 变为 #b",
+			" 。 NL 添加 [E] 的效果仍然有效。",
+			"我的身体已经筋疲力尽了……",
+			"感受我的力量！"
+		]
+	},
+
+	"soulessences:AngryPower": {
+		"NAME": "生气",
+		"DESCRIPTIONS": ["受到 #y攻击 伤害，获得 #b", " 点 #y力量 。"]
+	},
+
+	"soulessences:ChargingPower": {
+		"NAME": "蓄能",
+		"DESCRIPTIONS": [
+			"对所有敌人造成 #b",
+			" 点伤害，于第 #b",
+			" 回合结束时。",
+			" NL 当前回合： #b",
+			" 。",
+			"~要来咯！！~"
+		]
+	},
+
+	"soulessences:EnragedPower": {
+		"NAME": "激怒",
+		"DESCRIPTIONS": [
+			"若有敌人的意图不是 #y攻击 ，则获得 #b",
+			" 点 #y力量 并失去 #b",
+			" 点 #y敏捷 。",
+			"跟我打！！！"
+		]
+	},
+
+	"soulessences:ThieveryPower": {
+		"NAME": "偷窃",
+		"DESCRIPTIONS": [
+			"每当你造成未被格挡的 #y攻击伤害 时， 获得 #b",
+			" 金币。 NL 与 #y回合结束 时或 #b",
+			" 次 #y 攻击 后消失"
+		]
+	},
+
+	"soulessences:MitosisPower": {
+		"NAME": "分裂",
+		"DESCRIPTIONS": [
+			"当生命值等于或低于 #b50% 时激活。",
+			" 每当承受伤害时， #y召唤 一个 #b史莱姆爪牙 来帮助你。"
+		]
+	},
+
+	"soulessences:ModeshiftPower": {
+		"NAME": "形态转换",
+		"DESCRIPTIONS": ["承受总伤害超过 #b", " 后, 获得 #b", " 层 #y荆棘 。"]
+	},
+
+	"soulessences:ShadowburnPower": {
+		"NAME": "地狱火",
+		"DESCRIPTIONS": ["造成 #b", " 点 #y真实 伤害。"]
+	}
+}

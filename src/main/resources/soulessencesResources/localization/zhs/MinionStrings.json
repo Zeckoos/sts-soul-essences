@@ -1,0 +1,17 @@
+{
+	"soulessences:AcidSlime": {
+		"NAME": "酸性史莱姆",
+		"DESCRIPTION": [
+			"#y被动： 在你的回合结束时，对一名随机敌人施加 %d 层 #y中毒 。",
+			"NL #y激发：对一名随机敌人施加 %d 层 #y中毒 。"
+		]
+	},
+
+	"soulessences:SpikeSlime": {
+		"NAME": " 尖刺史莱姆",
+		"DESCRIPTION": [
+			"#y被动： 在你的回合结束时，获得 %d 层 #y 多层护甲 。",
+			"NL #y激发： 获得 %d 层 #y 多层护甲 。"
+		]
+	}
+}
